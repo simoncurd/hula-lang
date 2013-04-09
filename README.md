@@ -18,16 +18,18 @@ Hula was designed for orchestrating underlying services. As such:
 
 A Hula script looks like this:
 
-
-    Set greeting="Hello, World!"
-	Echo $greeting
+```SQL
+Set greeting="Hello, World!"
+Echo $greeting
+```
 
 
 Hula scripts contain a set of commands which (almost) always follow this structure:
 
 
-	Command Parameter1Name=Parameter1Value, Parameter2Name=Parameter2Value as ReturnVariable
-
+```SQL
+Command Parameter1Name=Parameter1Value, Parameter2Name=Parameter2Value as ReturnVariable
+```
 
 In the above script: 
 
@@ -38,10 +40,10 @@ In the above script:
 
 Our greeting script above could have read:
 
-
-    NewMap greeting="Hello, World!" as greetingMap
-    Echo "Hula says $greetingMap.greeting"
-
+```SQL
+NewMap greeting="Hello, World!" as greetingMap
+Echo "Hula says $greetingMap.greeting"
+```
  
 In the above script:
 
@@ -53,14 +55,15 @@ In the above script:
 
 Some commands support nested blocks, as shown below:
 
+```SQL
+Set names="Jeff,Jim,John"
 
-    Set names="Jeff,Jim,John"
-    
-    # turns the CSV string into a list
-    Tokenise $names as nameList
-    Loop $nameList as name
-        Echo "Hello, $name"
-    End
+# turns the CSV string into a list
+Tokenise $names as nameList
+Loop $nameList as name
+   Echo "Hello, $name"
+End
+```
 
 In the above script:
 
