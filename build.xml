@@ -26,7 +26,7 @@
 	</target>
 
 	<target name="generate-docs">
-		<javadoc sourcepath="src" destdir="doc">
+		<javadoc sourcepath="src" destdir="../hula-lang-pages/javadoc">
 			<classpath>
 				<fileset dir="lib">
 					<include name="**/*"/>
