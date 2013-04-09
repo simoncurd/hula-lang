@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Hula-lang : Hula is a simple scripting language for writing applications. " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Hula-lang</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/simoncurd/hula-lang">View on GitHub</a>
+
+          <h1 id="project_title">Hula-lang</h1>
+          <h2 id="project_tagline">Hula is a simple scripting language for writing applications. </h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/simoncurd/hula-lang/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/simoncurd/hula-lang/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Hula-lang</h1>
+
+<p>Hula is a simple scripting language for writing applications. </p>
+
+<p>The core language goals are:</p>
+
+<ul>
+<li>Readability - scripts should be readable without knowing the syntax</li>
+<li>Extensibility - it should be easy to plug in new functionality</li>
+<li>Flexibility - scripts can be modified without a build</li>
+</ul><p>Hula was designed for orchestrating underlying services. As such:</p>
+
+<ul>
+<li>Hula is good at modelling and gluing together services</li>
+<li>Hula is poor at capturing business logic - this should live in underlying services<br>
+</li>
+</ul><h1>Syntax</h1>
+
+<p>A Hula script looks like this:</p>
+
+<div class="highlight"><pre><span class="k">Set</span> <span class="n">greeting</span><span class="o">=</span><span class="ss">"Hello, World!"</span>
+<span class="n">Echo</span> <span class="err">$</span><span class="n">greeting</span>
+</pre></div>
+
+<p>Hula scripts contain a set of commands which (almost) always follow this structure:</p>
+
+<div class="highlight"><pre><span class="n">Command</span> <span class="n">Parameter1Name</span><span class="o">=</span><span class="n">Parameter1Value</span><span class="p">,</span> <span class="n">Parameter2Name</span><span class="o">=</span><span class="n">Parameter2Value</span> <span class="k">as</span> <span class="n">ReturnVariable</span>
+</pre></div>
+
+<p>In the above script: </p>
+
+<ul>
+<li>The commands are <strong>Set</strong> and <strong>Echo</strong>.</li>
+<li>greeting is a parameter passed into the <strong>Set</strong> command, with value "Hello, World!"</li>
+<li>$greeting is a reference to a variable named greeting (created by the <strong>Set</strong> command). Variable references always have a leading dollar ($).</li>
+</ul><p>Our greeting script above could have read:</p>
+
+<div class="highlight"><pre><span class="n">NewMap</span> <span class="n">greeting</span><span class="o">=</span><span class="ss">"Hello, World!"</span> <span class="k">as</span> <span class="n">greetingMap</span>
+<span class="n">Echo</span> <span class="ss">"Hula says $greetingMap.greeting"</span>
+</pre></div>
+
+<p>In the above script:</p>
+
+<ul>
+<li>
+<strong>NewMap</strong> is a command which creates a Map object.</li>
+<li>greetingMap is the return variable from the <strong>NewMap</strong> command.</li>
+<li>The <strong>Echo</strong> command embeds a reference to the greetingMap variable, using Dot Notation to get the value of the greeting key (set by the <strong>NewMap</strong> command).</li>
+</ul><h3>Nested Blocks</h3>
+
+<p>Some commands support nested blocks, as shown below:</p>
+
+<div class="highlight"><pre><span class="k">Set</span> <span class="k">names</span><span class="o">=</span><span class="ss">"Jeff,Jim,John"</span>
+
+<span class="o">#</span> <span class="n">turns</span> <span class="n">the</span> <span class="n">CSV</span> <span class="n">string</span> <span class="k">into</span> <span class="n">a</span> <span class="n">list</span>
+<span class="n">Tokenise</span> <span class="err">$</span><span class="k">names</span> <span class="k">as</span> <span class="n">nameList</span>
+<span class="n">Loop</span> <span class="err">$</span><span class="n">nameList</span> <span class="k">as</span> <span class="n">name</span>
+   <span class="n">Echo</span> <span class="ss">"Hello, $name"</span>
+<span class="k">End</span>
+</pre></div>
+
+<p>In the above script:</p>
+
+<ul>
+<li>The <strong>Loop</strong> command takes a list as a parameter.</li>
+<li>The nested block is executed for each element in the list.</li>
+<li>For each execution, the $name variable contains the next element in the list.</li>
+</ul><p>For further information please see the [Quick Start Guide].</p>
+
+<h1>Getting Started</h1>
+
+<p>Hula-lang is packaged as an project which you can import directly into eclipse. </p>
+
+<p>Alternatively you can test Hula scripts using the batch/shell scripts supplied:</p>
+
+<p><strong>Windows:</strong></p>
+
+<pre><code>Hula Greetings
+</code></pre>
+
+<p><strong>Linux/Mac:</strong></p>
+
+<pre><code>Hula.sh Greetings
+</code></pre>
+
+<p>Note: The test scripts live in test/scripts</p>
+
+<h1>Latest Version</h1>
+
+<p>v0.1 alpha 1</p>
+
+<h1>Contributing</h1>
+
+<ul>
+<li>Please raise any issues in the github issue tracker</li>
+</ul><h1>Author</h1>
+
+<ul>
+<li>[<a href="http://github.com/simoncurd">http://github.com/simoncurd</a>]</li>
+</ul><h1>Copyright and License</h1>
+
+<p>[Apache 2 License]</p>
+
+<p>Copyright 2013 Simon Curd <a href="mailto:simoncurd@gmail.com">simoncurd@gmail.com</a></p>
+
+<p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at</p>
+
+<p>[<a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>]</p>
+
+<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Hula-lang maintained by <a href="https://github.com/simoncurd">simoncurd</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
