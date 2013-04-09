@@ -1,0 +1,2 @@
+Set greeting="Hello, World!"
+Echo $greeting

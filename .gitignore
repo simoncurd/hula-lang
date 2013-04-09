@@ -1,0 +1,18 @@
+
+# ignore eclipse-generated binary directory
+bin
+
+# ignore ant-generated build directory
+build
+
+# ignore the tomcat directory
+apache-tomcat-7.0.11
+
+# ignore the AwsCredentials.properties, these shouldn't be checked in
+AwsCredentials.properties
+
+# ignore the eclipse workspace directory
+.metadata
+
+hula-web/platform
+

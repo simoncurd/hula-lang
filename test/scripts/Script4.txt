@@ -1,0 +1,18 @@
+
+
+Set name="Jeff"
+Set age = 29
+
+If $name = "Jeff" AND ( $age > 25 AND $age < 30)
+
+	Echo $name's wise
+	
+ElseIf $name="Jeff" AND $age = 30
+
+	Echo $name's nearly wise
+	
+Else
+	Echo $name's not quite wise
+
+End
+

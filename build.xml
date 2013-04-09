@@ -1,0 +1,50 @@
+<project default="build" name="Hula-Lang Build File">
+	
+	<property file="build.properties"/>
+
+	
+	<target name="build">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.dir}/classes"/>
+		
+		<antcall target="generate-conditional"/>
+		
+		<javac destdir="${build.dir}/classes" debug="on">
+			<src path="src"/>
+			<classpath>
+				<fileset dir="lib">
+					<include name="**/*"/>
+				</fileset>
+			</classpath>
+		</javac>
+		
+		<jar destfile="lib/hula-lang-${build.version}.jar" basedir="${build.dir}/classes"/>
+	</target>
+	
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+	</target>
+
+	<target name="generate-docs">
+		<javadoc sourcepath="src" destdir="doc">
+			<classpath>
+				<fileset dir="lib">
+					<include name="**/*"/>
+				</fileset>
+			</classpath>
+		</javadoc>
+	</target>
+	
+	<target name="generate-conditional">
+		<java classname="org.antlr.Tool" dir="src" fork="true">
+			<arg value="-o"/>
+			<arg value="com/hula/lang/conditional"/>
+			<arg value="com/hula/lang/conditional/HulaConditional.g"/>
+			<arg value="com/hula/lang/conditional/HulaConditionalTree.g"/>
+			 <classpath>
+	           <pathelement location="lib/antlr-3.5-complete-no-st3.jar"/>
+	         </classpath>
+		</java>
+	</target>
+
+</project>

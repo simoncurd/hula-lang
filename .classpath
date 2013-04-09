@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="testsrc"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="lib/dependencies/antlr-3.5-complete-no-st3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/dependencies/bsh-core-2.0b4.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/dependencies/commons-beanutils-core-1.8.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/dependencies/commons-lang-2.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/dependencies/commons-logging-1.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/dependencies/gson-2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/dependencies/joda-time-2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/dependencies/log4j-1.2.16.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/dependencies/slf4j-api-1.6.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/dependencies/slf4j-log4j12-1.6.4.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

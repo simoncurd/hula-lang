@@ -1,0 +1,7 @@
+
+
+Set name="Simon"
+
+Call Script3
+
+Echo $name

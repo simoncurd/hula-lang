@@ -1,0 +1,9 @@
+Set names="Jeff,Jim,John"
+Tokenise $names as nameList
+Loop $nameList as name
+    Echo "Hello, $name"
+    
+    If $name = "Jim"
+    	Echo "we're already at Jim!"
+    End
+End

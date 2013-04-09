@@ -1,0 +1,47 @@
+Echo "hello this is a script"
+
+
+
+#
+# chop up some dates
+#
+GetDate as today
+DateToString $today, format=dd/MM/yyyy as todaysDate
+Echo "so the actual date is $todaysDate"
+
+StringReplace $todaysDate, match="/", with="-" as today2
+Echo "and now $today2"
+
+Tokenise $today2, delimiter=- as nums
+Loop $nums as num
+	Echo "number: [$num]"
+End
+
+NewMap as person
+
+Set $person.name="Jeff"
+Set $person.age="32"
+
+Loop $nums as num
+
+	Append "var", value=$num as var
+	AddToMap $person, key=$var, value=$num
+End
+
+Set $person.test="\""
+Echo $person.test
+
+MapToJson $person as personJson
+
+Echo "as Json that's [$personJson]"
+Echo "so the person is $person"
+
+GetVariableNames as vars
+
+Loop $vars as var
+	Echo "var [$var]"
+End
+
+
+DateToString $today, format="yyyy:MM:dd:HH:mm:ss:SSS" as str
+Echo $str
