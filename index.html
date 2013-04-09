@@ -49,62 +49,45 @@
 </li>
 </ul><h1>Syntax</h1>
 
-<p>A Hula script looks like this:</p>
+<p>An example Hula script looks like this:</p>
 
-<div class="highlight"><pre><span class="k">Set</span> <span class="n">greeting</span><span class="o">=</span><span class="ss">"Hello, World!"</span>
-<span class="n">Echo</span> <span class="err">$</span><span class="n">greeting</span>
-</pre></div>
+<pre><code>Set greeting="Hello, World!"
+Echo $greeting
+</code></pre>
 
 <p>Hula scripts contain a set of commands which (almost) always follow this structure:</p>
 
-<div class="highlight"><pre><span class="n">Command</span> <span class="n">Parameter1Name</span><span class="o">=</span><span class="n">Parameter1Value</span><span class="p">,</span> <span class="n">Parameter2Name</span><span class="o">=</span><span class="n">Parameter2Value</span> <span class="k">as</span> <span class="n">ReturnVariable</span>
-</pre></div>
+<pre><code>Command Parameter1Name=Parameter1Value, Parameter2Name=Parameter2Value as ReturnVariable
+</code></pre>
 
 <p>In the above script: </p>
 
 <ul>
 <li>The commands are <strong>Set</strong> and <strong>Echo</strong>.</li>
 <li>greeting is a parameter passed into the <strong>Set</strong> command, with value "Hello, World!"</li>
-<li>$greeting is a reference to a variable named greeting (created by the <strong>Set</strong> command). Variable references always have a leading dollar ($).</li>
-</ul><p>Our greeting script above could have read:</p>
+<li>$greeting is a reference to the greeting variable (created by the <strong>Set</strong> command).</li>
+</ul><p>Some commands support nested blocks, as shown below:</p>
 
-<div class="highlight"><pre><span class="n">NewMap</span> <span class="n">greeting</span><span class="o">=</span><span class="ss">"Hello, World!"</span> <span class="k">as</span> <span class="n">greetingMap</span>
-<span class="n">Echo</span> <span class="ss">"Hula says $greetingMap.greeting"</span>
-</pre></div>
+<pre><code>Set names="Jeff,Jim,John"
 
-<p>In the above script:</p>
+# turns the CSV string into a list
+Tokenise $names as nameList
+Loop $nameList as name
+   Echo "Hello, $name"
 
-<ul>
-<li>
-<strong>NewMap</strong> is a command which creates a Map object.</li>
-<li>greetingMap is the return variable from the <strong>NewMap</strong> command.</li>
-<li>The <strong>Echo</strong> command embeds a reference to the greetingMap variable, using Dot Notation to get the value of the greeting key (set by the <strong>NewMap</strong> command).</li>
-</ul><h3>Nested Blocks</h3>
+   If $name = "Jim"
+       Echo "I had an Uncle Jim"
+   End
+End
+</code></pre>
 
-<p>Some commands support nested blocks, as shown below:</p>
-
-<div class="highlight"><pre><span class="k">Set</span> <span class="k">names</span><span class="o">=</span><span class="ss">"Jeff,Jim,John"</span>
-
-<span class="o">#</span> <span class="n">turns</span> <span class="n">the</span> <span class="n">CSV</span> <span class="n">string</span> <span class="k">into</span> <span class="n">a</span> <span class="n">list</span>
-<span class="n">Tokenise</span> <span class="err">$</span><span class="k">names</span> <span class="k">as</span> <span class="n">nameList</span>
-<span class="n">Loop</span> <span class="err">$</span><span class="n">nameList</span> <span class="k">as</span> <span class="n">name</span>
-   <span class="n">Echo</span> <span class="ss">"Hello, $name"</span>
-<span class="k">End</span>
-</pre></div>
-
-<p>In the above script:</p>
-
-<ul>
-<li>The <strong>Loop</strong> command takes a list as a parameter.</li>
-<li>The nested block is executed for each element in the list.</li>
-<li>For each execution, the $name variable contains the next element in the list.</li>
-</ul><p>For further information please see the [Quick Start Guide].</p>
+<p>For further information please see the [Hula Language Guide].</p>
 
 <h1>Getting Started</h1>
 
 <p>Hula-lang is packaged as an project which you can import directly into eclipse. </p>
 
-<p>Alternatively you can test Hula scripts using the batch/shell scripts supplied:</p>
+<p>Alternatively you can test Hula scripts using the supplied batch/shell scripts.</p>
 
 <p><strong>Windows:</strong></p>
 
@@ -116,20 +99,23 @@
 <pre><code>Hula.sh Greetings
 </code></pre>
 
-<p>Note: The test scripts live in test/scripts</p>
+<p>Note: </p>
 
-<h1>Latest Version</h1>
+<ul>
+<li>The test scripts live in test/scripts.</li>
+<li>Javadocs available at [<a href="http://simoncurd.github.io/hula-lang/javadoc/">http://simoncurd.github.io/hula-lang/javadoc/</a>]</li>
+</ul><h1>Latest Version</h1>
 
-<p>v0.1 alpha 1</p>
-
-<h1>Contributing</h1>
+<ul>
+<li>The current release is version 0.1 alpha 1. </li>
+</ul><h1>Contributing</h1>
 
 <ul>
 <li>Please raise any issues in the github issue tracker</li>
 </ul><h1>Author</h1>
 
 <ul>
-<li>[<a href="http://github.com/simoncurd">http://github.com/simoncurd</a>]</li>
+<li><a href="http://github.com/simoncurd">http://github.com/simoncurd</a></li>
 </ul><h1>Copyright and License</h1>
 
 <p>[Apache 2 License]</p>
