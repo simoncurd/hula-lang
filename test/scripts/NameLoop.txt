@@ -1,0 +1,11 @@
+Set names="Jeff,Jim,John"
+
+# turns the CSV string into a list
+Tokenise $names as nameList
+Loop $nameList as name
+   Echo "Hello, $name"
+
+   If $name = "Jim"
+       Echo "I had an Uncle Jim"
+   End
+End
