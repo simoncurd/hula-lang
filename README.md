@@ -16,18 +16,16 @@ Hula was designed for orchestrating underlying services. As such:
 # Syntax
 
 
-A Hula script looks like this:
+An example Hula script looks like this:
 
-```SQL
+```
 Set greeting="Hello, World!"
 Echo $greeting
 ```
 
-
 Hula scripts contain a set of commands which (almost) always follow this structure:
 
-
-```SQL
+```
 Command Parameter1Name=Parameter1Value, Parameter2Name=Parameter2Value as ReturnVariable
 ```
 
@@ -35,49 +33,31 @@ In the above script:
 
 * The commands are **Set** and **Echo**.
 * greeting is a parameter passed into the **Set** command, with value "Hello, World!"
-* $greeting is a reference to a variable named greeting (created by the **Set** command). Variable references always have a leading dollar ($).
-
-
-Our greeting script above could have read:
-
-```SQL
-NewMap greeting="Hello, World!" as greetingMap
-Echo "Hula says $greetingMap.greeting"
-```
- 
-In the above script:
-
-* **NewMap** is a command which creates a Map object.
-* greetingMap is the return variable from the **NewMap** command.
-* The **Echo** command embeds a reference to the greetingMap variable, using Dot Notation to get the value of the greeting key (set by the **NewMap** command).
-
-### Nested Blocks
+* $greeting is a reference to the greeting variable (created by the **Set** command).
 
 Some commands support nested blocks, as shown below:
 
-```SQL
+```
 Set names="Jeff,Jim,John"
 
 # turns the CSV string into a list
 Tokenise $names as nameList
 Loop $nameList as name
    Echo "Hello, $name"
+   
+   If $name = "Jim"
+       Echo "I had an Uncle Jim"
+   End
 End
 ```
 
-In the above script:
-
-* The **Loop** command takes a list as a parameter.
-* The nested block is executed for each element in the list.
-* For each execution, the $name variable contains the next element in the list.
-
-For further information please see the [Quick Start Guide].
+For further information please see the [Hula Language Guide].
 
 # Getting Started
 
 Hula-lang is packaged as an project which you can import directly into eclipse. 
 
-Alternatively you can test Hula scripts using the batch/shell scripts supplied:
+Alternatively you can test Hula scripts using the supplied batch/shell scripts.
 
 **Windows:**
 
@@ -87,11 +67,13 @@ Alternatively you can test Hula scripts using the batch/shell scripts supplied:
 
 	Hula.sh Greetings
 
-Note: The test scripts live in test/scripts
+Note: 
+* The test scripts live in test/scripts.
+* Javadocs available at [http://simoncurd.github.io/hula-lang/javadoc/]
 
 # Latest Version
 
-v0.1 alpha 1
+* The current release is version 0.1 alpha 1. 
 
 # Contributing
 
@@ -99,7 +81,7 @@ v0.1 alpha 1
 
 # Author
 
-* [http://github.com/simoncurd]
+* http://github.com/simoncurd
 
 # Copyright and License
 
