@@ -10,7 +10,7 @@ The core language goals are:
 
 Hula was designed for orchestrating underlying services. As such:
 
-* Hula is good at modelling and gluing together services
+* Hula is good at object modelling and gluing together services
 * Hula is poor at capturing business logic - this should live in underlying services  
 
 # Syntax
@@ -23,15 +23,15 @@ Set greeting="Hello, World!"
 Echo $greeting
 ```
 
-Hula scripts contain a set of commands which (almost) always follow this structure:
+Hula scripts contain a set of statements which (almost) always follow this structure:
 
 ```
 Command Parameter1Name=Parameter1Value, Parameter2Name=Parameter2Value as ReturnVariable
 ```
 
-In the above script: 
+In the above script:
 
-* The commands are **Set** and **Echo**.
+* There are two statements which use the **Set** and **Echo** commands.
 * greeting is a parameter passed into the **Set** command, with value "Hello, World!"
 * $greeting is a reference to the greeting variable (created by the **Set** command).
 
