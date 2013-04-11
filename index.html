@@ -47,7 +47,9 @@
 <li>Hula is good at object modelling and gluing together services</li>
 <li>Hula is poor at capturing business logic - this should live in underlying services<br>
 </li>
-</ul><h1>Syntax</h1>
+</ul><p>At present Hula is only compatible with Java-based codebases, but support for other languages could be added in the future.</p>
+
+<h1>Syntax</h1>
 
 <p>An example Hula script looks like this:</p>
 
@@ -55,9 +57,9 @@
 Echo $greeting
 </code></pre>
 
-<p>Hula scripts contain a set of statements which (almost) always follow this structure:</p>
+<p>Hula scripts contain a set of statements which generally follow this structure:</p>
 
-<pre><code>Command Parameter1Name=Parameter1Value, Parameter2Name=Parameter2Value as ReturnVariable
+<pre><code>Command parameter1Name=parameter1Value, parameter2Name=parameter2Value as returnVariable
 </code></pre>
 
 <p>In the above script:</p>
@@ -81,7 +83,11 @@ Loop $nameList as name
 End
 </code></pre>
 
-<p>For further information please see the [Hula Language Guide].</p>
+<p>For further information please see the <a href="https://github.com/simoncurd/hula-lang/wiki/Hula-Language-Guide">Hula Language Guide</a>.</p>
+
+<h1>How it works</h1>
+
+<p>Hula scripts are parsed into BeanShell which is interpreted at execution time. Conditional logic is parsed by Antlr. </p>
 
 <h1>Getting Started</h1>
 
@@ -108,6 +114,13 @@ End
 
 <ul>
 <li>The current release is version 0.1 alpha 1. </li>
+</ul><h1>Roadmap</h1>
+
+<p>Key Features for future versions:</p>
+
+<ul>
+<li>A broader Command set</li>
+<li>Performance improvements</li>
 </ul><h1>Contributing</h1>
 
 <ul>
