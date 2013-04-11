@@ -7,8 +7,6 @@
 		<mkdir dir="${build.dir}"/>
 		<mkdir dir="${build.dir}/classes"/>
 		
-		<antcall target="generate-conditional"/>
-		
 		<javac destdir="${build.dir}/classes" debug="on">
 			<src path="src"/>
 			<classpath>

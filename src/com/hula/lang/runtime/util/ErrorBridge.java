@@ -21,9 +21,10 @@ import org.slf4j.LoggerFactory;
 import com.hula.lang.HulaConstants;
 import com.hula.lang.runtime.HulaError;
 import com.hula.lang.runtime.RuntimeConnector;
+import com.hula.lang.runtime.exception.HulaRuntimeException;
 
 /**
- * Responsible for packaging an exception caught by the OnFail Command 
+ * Responsible for packaging an exception caught by the OnFail Command
  * into a form which relates to the original Hula script, specifically
  * the line number
  */
@@ -36,14 +37,19 @@ public class ErrorBridge
 	 * 
 	 * @param connector the RuntimeConnector
 	 * @param throwable the thrown exception
-	 * @param returnParameter the variable name to store the HulaError with 
+	 * @param returnParameter the variable name to store the HulaError with
 	 */
 	public void execute(RuntimeConnector connector, Throwable throwable, String returnParameter)
 	{
 		HulaError hulaError = new HulaError();
-		
+
 		// store the exception on the HulaError
 		hulaError.setCause(throwable);
+
+		if (throwable instanceof HulaRuntimeException)
+		{
+			hulaError.setId(((HulaRuntimeException) throwable).getErrorCode());
+		}
 
 		// lookup the original line number and set in the HulaError
 		Object lineNumberObject = connector.getVariable(HulaConstants.lineNumber);
@@ -56,7 +62,7 @@ public class ErrorBridge
 			// nothing can be done about this
 			logger.error("error extracting line number for error [" + lineNumberObject + "]", e);
 		}
-		
+
 		// lookup the message and set in the HulaError
 		String throwableMessage = throwable.getMessage();
 		if (throwable.getMessage() == null)
@@ -64,8 +70,8 @@ public class ErrorBridge
 			throwableMessage = throwable.toString();
 		}
 		hulaError.setMessage(throwableMessage);
-		
-		// store on the context using the named return parameter 
+
+		// store on the context using the named return parameter
 		connector.setVariable(returnParameter, hulaError);
 
 	}

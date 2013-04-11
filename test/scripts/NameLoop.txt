@@ -1,7 +1,7 @@
-Set names="Jeff,Jim,John"
+#Set names="Jeff,Jim,John"
 
 # turns the CSV string into a list
-Tokenise $names as nameList
+Tokenise "Jeff,Jim,John" as nameList
 Loop $nameList as name
    Echo "Hello, $name"
 
@@ -9,3 +9,6 @@ Loop $nameList as name
        Echo "I had an Uncle Jim"
    End
 End
+
+
+

@@ -1,0 +1,11 @@
+Set name="Jeff"
+
+If $name = "Jeff"
+	Fail "name.invalid", "that's not a name I can accept"
+End
+
+Echo "test was successful"
+
+OnFail as e
+	Echo "test failed - $e.message ($e.id)", type=error
+End

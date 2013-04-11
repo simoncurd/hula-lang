@@ -21,6 +21,7 @@ package com.hula.lang.runtime;
 public class HulaError
 {
 	private int lineNumber;
+	private String id;
 	private String message;
 	private Throwable cause;
 	
@@ -67,5 +68,25 @@ public class HulaError
 	{
 		this.cause = cause;
 	}
+
+	/**
+	 * Get the id of the error
+	 * @return the id of the error
+	 */
+	public String getId()
+	{
+		return id;
+	}
+
+
+	/**
+	 * Set the id of the error
+	 * @param id the id of the error
+	 */
+	public void setId(String id)
+	{
+		this.id = id;
+	}
+
 	
 }
