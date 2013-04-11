@@ -37,7 +37,7 @@ In the above script:
 * greeting is a parameter passed into the **Set** command, with value "Hello, World!"
 * $greeting is a reference to the greeting variable (created by the **Set** command).
 
-Some commands support nested blocks, as shown below:
+Some commands support nested statements, as shown below:
 
 ```
 Set names="Jeff,Jim,John"
