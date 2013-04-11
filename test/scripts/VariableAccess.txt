@@ -1,0 +1,6 @@
+
+NewMap addressLine1="666 Acacia Avenue" as addressMap
+NewMap name="Jeff", address=$addressMap as person
+
+Echo "Found $person.name"
+Echo "They live at $person.address.addressLine1"

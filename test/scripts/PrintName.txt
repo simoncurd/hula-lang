@@ -1,0 +1,2 @@
+Set name="World"
+Echo "Hello, $name.length()!"

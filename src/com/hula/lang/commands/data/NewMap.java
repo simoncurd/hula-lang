@@ -62,7 +62,7 @@ public class NewMap extends AbstractCommand
 			{
 				continue;
 			}
-			String value = getVariableValueAsString(key, connector);
+			Object value = getVariableValue(key, connector);
 			map.put(key, value);
 		}
 

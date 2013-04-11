@@ -42,7 +42,7 @@
 			<arg value="com/hula/lang/conditional/HulaConditional.g"/>
 			<arg value="com/hula/lang/conditional/HulaConditionalTree.g"/>
 			 <classpath>
-	           <pathelement location="lib/antlr-3.5-complete-no-st3.jar"/>
+	           <pathelement location="lib/dependencies/antlr-3.5-complete-no-st3.jar"/>
 	         </classpath>
 		</java>
 	</target>

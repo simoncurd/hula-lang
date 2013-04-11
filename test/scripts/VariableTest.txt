@@ -1,0 +1,9 @@
+
+Set "hello", "goodbye", "what's next?"
+
+GetVariableNames as vars
+
+Loop $vars as var
+	Echo "var [$var]"
+End
+
