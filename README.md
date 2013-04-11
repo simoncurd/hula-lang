@@ -10,8 +10,10 @@ The core language goals are:
 
 Hula was designed for orchestrating underlying services. As such:
 
-* Hula is good at modelling and gluing together services
+* Hula is good at object modelling and gluing together services
 * Hula is poor at capturing business logic - this should live in underlying services  
+
+At present Hula is only compatible with Java-based codebases, but support for other languages could be added in the future.
 
 # Syntax
 
@@ -23,15 +25,15 @@ Set greeting="Hello, World!"
 Echo $greeting
 ```
 
-Hula scripts contain a set of commands which (almost) always follow this structure:
+Hula scripts contain a set of statements which generally follow this structure:
 
 ```
-Command Parameter1Name=Parameter1Value, Parameter2Name=Parameter2Value as ReturnVariable
+Command parameter1Name=parameter1Value, parameter2Name=parameter2Value as returnVariable
 ```
 
-In the above script: 
+In the above script:
 
-* The commands are **Set** and **Echo**.
+* There are two statements which use the **Set** and **Echo** commands.
 * greeting is a parameter passed into the **Set** command, with value "Hello, World!"
 * $greeting is a reference to the greeting variable (created by the **Set** command).
 
@@ -51,7 +53,11 @@ Loop $nameList as name
 End
 ```
 
-For further information please see the [Hula Language Guide].
+For further information please see the [Hula Language Guide](https://github.com/simoncurd/hula-lang/wiki/Hula-Language-Guide).
+
+# How it works
+
+Hula scripts are parsed into BeanShell which is interpreted at execution time. Conditional logic is parsed by Antlr. 
 
 # Getting Started
 
@@ -74,6 +80,13 @@ Note:
 # Latest Version
 
 * The current release is version 0.1 alpha 1. 
+
+# Roadmap
+
+Key Features for future versions:
+
+* A broader Command set
+* Performance improvements
 
 # Contributing
 
