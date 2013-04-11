@@ -129,7 +129,7 @@ public abstract class AbstractCommand implements Command
 	{
 		String parameterValue = getSignatureParameter(parameterKey);
 
-		if (isReference(parameterValue))
+		if (CommandUtil.isVariableReference(parameterValue))
 		{
 			return CommandUtil.getReferencedVariableValue(parameterValue, connector);
 		}
@@ -139,10 +139,6 @@ public abstract class AbstractCommand implements Command
 		}
 	}
 
-	private boolean isReference(String parameterValue)
-	{		
-		return parameterValue != null && parameterValue.startsWith("$") && parameterValue.indexOf(' ') == -1;
-	}
 
 	/**
 	 * Helper method which sets a variable. If the value is a reference 
@@ -167,7 +163,7 @@ public abstract class AbstractCommand implements Command
 
 		// Set: mapping [$script.description] to [Saves a script]
 
-		if (isReference(name))
+		if (CommandUtil.isVariableReference(name))
 		{
 			// strip off the dollar notation
 			name = name.substring(1);

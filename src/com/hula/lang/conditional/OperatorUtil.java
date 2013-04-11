@@ -18,11 +18,12 @@ package com.hula.lang.conditional;
 import java.math.BigDecimal;
 
 import com.hula.lang.runtime.RuntimeConnector;
+import com.hula.lang.util.CommandUtil;
 
 /**
- * A utility class to the {@link HulaConditionalTree} providing methods 
+ * A utility class to the {@link HulaConditionalTree} providing methods
  * implementing the conditional, relational & equality operations required for
- * Hula commands supporting conditional logic.   
+ * Hula commands supporting conditional logic.
  */
 public class OperatorUtil
 {
@@ -148,7 +149,7 @@ public class OperatorUtil
 		BooleanCompare bc = new BooleanCompare(op1, op2, rc);
 		return bc.left || bc.right;
 	}
-	
+
 	/**
 	 * A utility enumeration which specifies the preferred types for
 	 * resolved Object to be cast to
@@ -169,7 +170,6 @@ public class OperatorUtil
 	{
 		return resolveAlign(object, rc, null);
 	}
-
 
 	/**
 	 * Resolve variable references and align to a comparable type.
@@ -234,8 +234,6 @@ public class OperatorUtil
 	 */
 	private static Object resolveVariable(VariableReference reference, RuntimeConnector rc)
 	{
-		String name = reference.getName().substring(1);
-		Object result = rc.getVariable(name);
-		return result;
+		return CommandUtil.getReferencedVariableValue(reference.getName(), rc);
 	}
 }
