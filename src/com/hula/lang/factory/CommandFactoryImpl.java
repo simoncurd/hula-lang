@@ -16,6 +16,7 @@
 package com.hula.lang.factory;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 import com.hula.lang.factory.exception.CommandFactoryException;
@@ -34,7 +35,17 @@ public class CommandFactoryImpl implements CommandFactory
 	@Override
 	public void loadCommands(String filename) throws IOException
 	{
-		commands.load(FileUtil.getFileInputStream(filename));
+		InputStream in = null;
+		try
+		{
+			in = FileUtil.getFileInputStream(filename);
+			commands.load(in);
+		}
+		finally
+		{
+			in.close();
+		}
+		
 	}
 
 	@SuppressWarnings("unchecked")
