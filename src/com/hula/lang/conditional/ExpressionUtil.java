@@ -24,7 +24,7 @@ import com.hula.lang.conditional.HulaConditionalParser.parse_return;
 import com.hula.lang.runtime.RuntimeConnector;
 
 /**
- * A utility class to Hula commands supporting conditional logic. Provides validation 
+ * A utility class to Hula commands supporting conditional logic. Provides validation
  * and evaluation of conditional expressions at runtime.
  */
 public class ExpressionUtil
@@ -68,9 +68,13 @@ public class ExpressionUtil
 		{
 			throw new RuntimeException("error evaluating expression [" + expression + "]", e);
 		}
+		finally
+		{
+			tree.setRuntimeConnector(null);
+		}
 
 	}
-	
+
 	/**
 	 * Validates a conditional expression
 	 * 
