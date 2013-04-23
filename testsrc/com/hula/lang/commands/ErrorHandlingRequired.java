@@ -18,8 +18,7 @@ package com.hula.lang.commands;
 import com.hula.lang.model.FailsWith;
 import com.hula.lang.runtime.RuntimeConnector;
 
-@FailsWith(
-		errorCodes = { "my.error" })
+@FailsWith(errorCodes = { "my.error" })
 public class ErrorHandlingRequired extends AbstractCommand
 {
 

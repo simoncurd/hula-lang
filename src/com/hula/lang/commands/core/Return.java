@@ -22,13 +22,17 @@ import com.hula.lang.runtime.RuntimeConnector;
 
 /**
  * The Return command terminates the script immediately, to return control
- * to the calling script (if any). <br/><br/>
+ * to the calling script (if any). <br/>
+ * <br/>
  * 
- * See also: {@link Quit}<br/><br/>
+ * See also: {@link Quit}<br/>
+ * <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
  * Return to the calling script depending on a variable value<br/>
+ * 
  * <pre>
  * If input="exit"
  *    Return

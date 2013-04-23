@@ -26,12 +26,14 @@ import com.hula.lang.runtime.RuntimeConnector;
 import com.hula.lang.runtime.exception.HulaRuntimeException;
 
 /**
- * The JsonToMap command converts the contents of a Json string into a {@link Map} object. 
- * This command does the opposite of the {@link MapToJson} command. <br/><br/>
+ * The JsonToMap command converts the contents of a Json string into a {@link Map} object.
+ * This command does the opposite of the {@link MapToJson} command. <br/>
+ * <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
- * Converts a Json String contained in a variable called 
+ * Converts a Json String contained in a variable called
  * jsonString into a Map variable called mapObject.<br/>
  * <code>JsonToMap $jsonString as mapObject</code>
  */
@@ -62,6 +64,5 @@ public class JsonToMap extends AbstractCommand
 		connector.setVariable(getReturnParameter(), map);
 
 	}
-
 
 }

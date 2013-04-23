@@ -26,12 +26,11 @@ import com.hula.lang.parser.exception.HulaParserException;
 public class ScriptReaderImpl implements ScriptReader
 {
 	private static final String NEWLINE = "\n";
-	
+
 	private HulaParser hulaParser = null;
 	private String path = null;
 	private String scriptExtension = ".txt";
-	
-	
+
 	/**
 	 * Create a new ScriptReader
 	 * 
@@ -41,14 +40,14 @@ public class ScriptReaderImpl implements ScriptReader
 	public ScriptReaderImpl(HulaParser hulaParser, String path)
 	{
 		this.hulaParser = hulaParser;
-		
+
 		if (!path.endsWith("/"))
 		{
 			path += "/";
 		}
 		this.path = path;
 	}
-	
+
 	@Override
 	public HulaExecutable read(String scriptName) throws IOException, HulaParserException
 	{
@@ -62,7 +61,7 @@ public class ScriptReaderImpl implements ScriptReader
 			sb.append(NEWLINE);
 		}
 		in.close();
-		
+
 		// parse script
 		HulaExecutable exec = hulaParser.parse(sb.toString());
 		return exec;
@@ -78,5 +77,4 @@ public class ScriptReaderImpl implements ScriptReader
 		this.scriptExtension = scriptExtension;
 	}
 
-	
 }

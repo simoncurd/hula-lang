@@ -26,12 +26,15 @@ import com.hula.lang.runtime.exception.HulaRuntimeException;
 import com.hula.lang.runtime.util.ErrorBridge;
 
 /**
- * The OnFail command is used to handle failures elsewhere in a Hula script. 
- * For commands that explicitly fail, a following OnFail block is mandatory. <br/><br/>
+ * The OnFail command is used to handle failures elsewhere in a Hula script.
+ * For commands that explicitly fail, a following OnFail block is mandatory. <br/>
+ * <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
  * For a command which can fail (TrySomething). <br/>
+ * 
  * <pre>
  * TrySomething
  * OnFail
@@ -40,6 +43,7 @@ import com.hula.lang.runtime.util.ErrorBridge;
  * </pre>
  * 
  * OnFail can wrap the exception in an {@link com.hula.lang.runtime.HulaError} object. <br/>
+ * 
  * <pre>
  * TrySomething
  * OnFail as e
@@ -84,7 +88,7 @@ public class OnFail extends AbstractCommand
 		// create a Try Command
 		Command c = new Try();
 		c.setCommandLine("Try-dynamic");
-		
+
 		// find the previous instance of an OnFail Command at this nesting
 		// level in the CommandModel
 		int onFailPos = cm.lastIndexOf(OnFail.class);
@@ -99,7 +103,7 @@ public class OnFail extends AbstractCommand
 			// insert Try after the previous OnFail
 			cm.insertCommand(c, onFailPos + 1);
 		}
-		
+
 		cm.addCommand(this);
 		cm.startNesting(this);
 	}

@@ -35,7 +35,7 @@ public class FileUtil
 	 */
 	public static InputStream getFileInputStream(String filename)
 	{
-		InputStream in = FileUtil.class.getResourceAsStream(filename);
+		InputStream in = FileUtil.class.getClassLoader().getResourceAsStream(filename);
 		if (in == null)
 		{
 			File f = null;

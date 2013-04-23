@@ -25,10 +25,10 @@ import java.util.List;
  * context to the user.
  */
 public class BeanShellUtil
-{	
+{
 	/**
-	 * Check if a line number is mentioned in the message. 
-	 *  
+	 * Check if a line number is mentioned in the message.
+	 * 
 	 * @param message the original message
 	 * @return boolean flag
 	 */
@@ -40,7 +40,7 @@ public class BeanShellUtil
 	/**
 	 * Check if a variable is undefined
 	 * 
-	 * @param message the original message 
+	 * @param message the original message
 	 * @return boolean flag
 	 */
 	public static boolean isUndefinedVariableMentioned(String message)
@@ -124,5 +124,4 @@ public class BeanShellUtil
 		return sb.toString();
 	}
 
-	
 }

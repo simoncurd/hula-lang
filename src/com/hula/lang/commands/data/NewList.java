@@ -24,13 +24,15 @@ import com.hula.lang.runtime.RuntimeConnector;
 
 /**
  * The NewList command creates a list variable, optionally populated with the contents
- * of a CSV-based String. <br/><br/>
+ * of a CSV-based String. <br/>
+ * <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
  * Create an empty list called namelist.<br/>
- * <code>NewList as namelist</code>
- * <br/><br/>
+ * <code>NewList as namelist</code> <br/>
+ * <br/>
  * 
  * Create a list called namelist populated from a CSV-based list of names.<br/>
  * <code>NewList csv="Jeff,Bill,John" as namelist</code>

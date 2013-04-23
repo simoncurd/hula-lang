@@ -17,7 +17,7 @@ package com.hula.lang.factory.exception;
 
 /**
  * An exception generated when the {@link com.hula.lang.factory.CommandFactory} cannot create
- * a {@link com.hula.lang.model.Command} class. 
+ * a {@link com.hula.lang.model.Command} class.
  */
 public class ErrorCreatingCommandException extends CommandFactoryException
 {

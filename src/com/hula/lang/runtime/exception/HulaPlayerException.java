@@ -19,7 +19,7 @@ import java.util.Map;
 
 /**
  * A checked exception thrown by the {@link com.hula.lang.runtime.HulaPlayer} which must be explicitly
- * caught by the container. It attempts to provide as much context as 
+ * caught by the container. It attempts to provide as much context as
  * possible about the exception which occured.
  */
 public class HulaPlayerException extends Exception
@@ -52,7 +52,7 @@ public class HulaPlayerException extends Exception
 		return variables;
 	}
 
-	@Override 
+	@Override
 	public String toString()
 	{
 		return this.getMessage() + " at hula line [" + lineNumber + "]";

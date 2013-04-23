@@ -15,7 +15,6 @@
  */
 package com.hula.lang.conditional.term;
 
-
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.NoViableAltException;

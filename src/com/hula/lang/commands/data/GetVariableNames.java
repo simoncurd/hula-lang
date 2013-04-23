@@ -44,7 +44,7 @@ public class GetVariableNames extends AbstractCommand
 {
 	private static String[] exclusions = new String[] { HulaConstants.beanShellId, HulaConstants.hulaContext, HulaConstants.lineNumber, HulaConstants.runtimeConnector };
 	private static List<String> exclusionList = Arrays.asList(exclusions);
-	
+
 	@Override
 	public void execute(RuntimeConnector connector)
 	{

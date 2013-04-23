@@ -15,7 +15,6 @@
  */
 package com.hula.lang.conditional.term;
 
-
 import org.junit.Assert;
 import org.junit.Test;
 

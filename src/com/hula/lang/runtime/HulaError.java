@@ -24,44 +24,50 @@ public class HulaError
 	private String id;
 	private String message;
 	private Throwable cause;
-	
+
 	/**
 	 * Get the line number from the original Hula script
+	 * 
 	 * @return the line number from the original Hula script
 	 */
 	public int getLineNumber()
 	{
 		return lineNumber;
 	}
-	
+
 	/**
 	 * Set the line number from the original Hula script
+	 * 
 	 * @param lineNumber the line number from the original Hula script
 	 */
 	public void setLineNumber(int lineNumber)
 	{
 		this.lineNumber = lineNumber;
 	}
+
 	public String getMessage()
 	{
 		return message;
 	}
+
 	public void setMessage(String message)
 	{
 		this.message = message;
 	}
-	
+
 	/**
 	 * Get the exception that was thrown
+	 * 
 	 * @return the exception that was thrown
 	 */
 	public Throwable getCause()
 	{
 		return cause;
 	}
-	
+
 	/**
 	 * Set the exception that was thrown
+	 * 
 	 * @param cause the exception that was thrown
 	 */
 	public void setCause(Throwable cause)
@@ -71,6 +77,7 @@ public class HulaError
 
 	/**
 	 * Get the id of the error
+	 * 
 	 * @return the id of the error
 	 */
 	public String getId()
@@ -78,9 +85,9 @@ public class HulaError
 		return id;
 	}
 
-
 	/**
 	 * Set the id of the error
+	 * 
 	 * @param id the id of the error
 	 */
 	public void setId(String id)
@@ -88,5 +95,4 @@ public class HulaError
 		this.id = id;
 	}
 
-	
 }

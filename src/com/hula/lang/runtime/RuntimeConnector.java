@@ -33,7 +33,7 @@ public class RuntimeConnector
 {
 	// a reference to the interpreter we're using
 	private Interpreter interpreter = null;
-	
+
 	// a reference to the script reader we're using
 	private ScriptReader scriptReader = null;
 
@@ -51,16 +51,17 @@ public class RuntimeConnector
 
 	/**
 	 * Get the interpreter in use
+	 * 
 	 * @return the interpreter in use
 	 */
 	public Interpreter getInterpreter()
 	{
 		return interpreter;
 	}
-	
-	
+
 	/**
 	 * Get the script reader we're using
+	 * 
 	 * @return the script reader we're using
 	 */
 	public ScriptReader getScriptReader()
@@ -100,7 +101,7 @@ public class RuntimeConnector
 			throw new RuntimeException("Error finding variable [" + name + "]", e);
 		}
 	}
-	
+
 	private NameSpace getNameSpace()
 	{
 		return interpreter.getNameSpace();

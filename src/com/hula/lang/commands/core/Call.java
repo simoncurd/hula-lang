@@ -31,11 +31,14 @@ import com.hula.lang.runtime.exception.NestedQuitException;
 
 /**
  * Allows a Hula script to call another script. After the called script
- * is completed, the calling script will resume. <br/><br/> 
+ * is completed, the calling script will resume. <br/>
+ * <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
  * Call another script called 'StoreData'
+ * 
  * <pre>
  * Call StoreData
  * </pre>
@@ -51,7 +54,7 @@ public class Call extends AbstractCommand
 		String scriptName = getVariableValueAsString("default", connector);
 		ScriptReader reader = connector.getScriptReader();
 		HulaExecutable exec = null;
-		
+
 		// load the script
 		try
 		{
@@ -75,9 +78,9 @@ public class Call extends AbstractCommand
 		{
 			if (e.getTarget() instanceof NestedQuitException)
 			{
-				throw (NestedQuitException)e.getTarget();
+				throw (NestedQuitException) e.getTarget();
 			}
-			throw new HulaRuntimeException("error.running.script", "error running script [" + scriptName + "]", e);			
+			throw new HulaRuntimeException("error.running.script", "error running script [" + scriptName + "]", e);
 		}
 		catch (EvalError e)
 		{

@@ -28,11 +28,14 @@ import com.hula.lang.parser.util.ParserUtil;
 import com.hula.lang.runtime.RuntimeConnector;
 
 /**
- * The Loop command will iterate through a list of items. <br/><br/>
+ * The Loop command will iterate through a list of items. <br/>
+ * <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
  * Loop through a list of names<br/>
+ * 
  * <pre>
  * Loop $nameList as $name
  *    Echo "name is $name

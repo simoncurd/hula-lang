@@ -25,7 +25,7 @@ public class BooleanCompare
 	// package protected
 	boolean left;
 	boolean right;
-	
+
 	public BooleanCompare(Object op1, Object op2, RuntimeConnector rc)
 	{
 		op1 = OperatorUtil.resolveAlign(op1, rc);
@@ -35,8 +35,8 @@ public class BooleanCompare
 		{
 			throw new RuntimeException("Cannot compare non-boolean values");
 		}
-		
-		left = (Boolean)op1;
-		right = (Boolean)op2;
+
+		left = (Boolean) op1;
+		right = (Boolean) op2;
 	}
 }

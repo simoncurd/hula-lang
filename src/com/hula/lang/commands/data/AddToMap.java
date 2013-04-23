@@ -15,7 +15,6 @@
  */
 package com.hula.lang.commands.data;
 
-
 import java.util.Map;
 
 import com.hula.lang.commands.AbstractCommand;
@@ -23,12 +22,13 @@ import com.hula.lang.model.NoReturnParam;
 import com.hula.lang.model.RequiresParams;
 import com.hula.lang.runtime.RuntimeConnector;
 
-
 /**
- * The AddToMap command adds an object to a map. <br/><br/>
+ * The AddToMap command adds an object to a map. <br/>
+ * <br/>
  * 
  * For example, the following command adds the address variable to a
- * map called p.<br/><br/>
+ * map called p.<br/>
+ * <br/>
  * 
  * <code>AddToMap $person, key="address", value=$address</code>
  */

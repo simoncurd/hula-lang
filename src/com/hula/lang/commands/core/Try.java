@@ -21,9 +21,11 @@ import com.hula.lang.parser.model.BeanShellScript;
 import com.hula.lang.runtime.RuntimeConnector;
 
 /**
- * Used by the {@link OnFail} command to begin a failure handling block. <br/><br/>
+ * Used by the {@link OnFail} command to begin a failure handling block. <br/>
+ * <br/>
  * 
- * This is NOT a Hula script command<br/><br/>
+ * This is NOT a Hula script command<br/>
+ * <br/>
  */
 @NoReturnParam
 public class Try extends AbstractCommand

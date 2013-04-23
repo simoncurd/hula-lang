@@ -101,7 +101,6 @@ public class NotEqualsTests extends BaseExpressionTestCase
 		Assert.assertTrue(eval("\"d\" != \"s\""));
 	}
 
-
 	@Test
 	public void testStringVariableNotEqualsString() throws Exception
 	{

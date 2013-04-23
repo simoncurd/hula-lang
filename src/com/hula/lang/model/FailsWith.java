@@ -19,7 +19,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * Indicates that a {@link Command} can fail, and the error codes it can fail with. 
+ * Indicates that a {@link Command} can fail, and the error codes it can fail with.
  */
 @Retention(RetentionPolicy.RUNTIME)
 public @interface FailsWith

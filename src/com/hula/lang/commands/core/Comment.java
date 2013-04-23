@@ -21,14 +21,16 @@ import com.hula.lang.parser.model.BeanShellScript;
 import com.hula.lang.runtime.RuntimeConnector;
 
 /**
- * Used by the {@link com.hula.lang.parser.HulaParser} to ensure the original 
- * Hula comments are retained in the resulting BeanShell script. <br/><br/>
+ * Used by the {@link com.hula.lang.parser.HulaParser} to ensure the original
+ * Hula comments are retained in the resulting BeanShell script. <br/>
+ * <br/>
  * 
- * This is NOT a Hula script command<br/><br/>
+ * This is NOT a Hula script command<br/>
+ * <br/>
  * 
  * Comments are made in Hula scripts using the hash (#) symbol. Comments must be the
  * first and only item on a line of Hula script - they cannot be attached
- * after another command line.  
+ * after another command line.
  * For example:</br><br/>
  * 
  * <pre>
@@ -38,6 +40,7 @@ import com.hula.lang.runtime.RuntimeConnector;
  * </pre>
  * 
  * This is not a valid comment:<br/>
+ * 
  * <pre>
  * Echo "Jeff" # write out Jeff's name
  * </pre>
@@ -54,6 +57,5 @@ public class Comment extends AbstractCommand
 	public void execute(RuntimeConnector connector)
 	{
 	}
-
 
 }

@@ -54,7 +54,7 @@ public class DateUtil
 	 * 
 	 * @param string The string to convert
 	 * @param format The format of the String
-	 * @return A Date 
+	 * @return A Date
 	 */
 	public static Date toDate(String string, String format)
 	{

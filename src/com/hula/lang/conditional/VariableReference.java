@@ -21,28 +21,33 @@ package com.hula.lang.conditional;
 public class VariableReference
 {
 	private String name;
+
 	public VariableReference(String name)
 	{
-		this.name=name;
+		this.name = name;
 	}
+
 	public String getName()
 	{
 		return name;
 	}
+
 	public void setName(String name)
 	{
 		this.name = name;
 	}
+
 	public String toString()
 	{
 		return name;
 	}
+
 	@Override
 	public boolean equals(Object other)
 	{
 		if (other instanceof VariableReference)
 		{
-			VariableReference otherRef = (VariableReference)other;
+			VariableReference otherRef = (VariableReference) other;
 			return otherRef.getName().equals(name);
 		}
 		return false;

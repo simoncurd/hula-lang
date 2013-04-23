@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Responsible for containing a set of {@link ParseError} instances. 
+ * Responsible for containing a set of {@link ParseError} instances.
  */
 public class HulaParserException extends Exception
 {

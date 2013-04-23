@@ -28,22 +28,25 @@ import com.hula.lang.util.DateUtil;
 
 /**
  * The DateToString command convert a {@link java.util.Date} into a String, using an optional format. <br/>
- * The default format is "<code>yyyy-MM-dd HH:mm:ss</code>"<br/><br/>
+ * The default format is "<code>yyyy-MM-dd HH:mm:ss</code>"<br/>
+ * <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
  * Convert a {@link java.util.Date} into a String containing "<code>2013-03-06 15:55:00</code>". <br/>
- * <code>DateToString $date as dateString</code><br/><br/>
+ * <code>DateToString $date as dateString</code><br/>
+ * <br/>
  * 
  * Convert a {@link java.util.Date} into a String containing "<code>2013/03/06</code>". <br/>
- * <code>DateToString $date, format="yyyy/MM/dd" as dateString</code><br/><br/>
+ * <code>DateToString $date, format="yyyy/MM/dd" as dateString</code><br/>
+ * <br/>
  */
 @RequiresReturnParam
 @RequiresParams(names = { "default" })
 public class DateToString extends AbstractCommand
 {
 
-	
 	@Override
 	public void execute(RuntimeConnector connector)
 	{
@@ -67,6 +70,5 @@ public class DateToString extends AbstractCommand
 		}
 
 	}
-
 
 }

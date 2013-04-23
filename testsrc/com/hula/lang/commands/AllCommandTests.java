@@ -43,28 +43,27 @@ import com.hula.lang.commands.string.StringReplaceTests;
 import com.hula.lang.commands.string.TokeniseTests;
 
 @RunWith(Suite.class)
-@SuiteClasses(
-{
-		// core
-		CommentTests.class, ConditionalLogicTests.class, EchoTests.class, LoopTests.class,
-		//
-		OnFailTests.class, SetTests.class,
+@SuiteClasses({
+// core
+CommentTests.class, ConditionalLogicTests.class, EchoTests.class, LoopTests.class,
+//
+OnFailTests.class, SetTests.class,
 
-		// core-conditional
-		IfTests.class, ElseIfTests.class, ElseTests.class,
+// core-conditional
+IfTests.class, ElseIfTests.class, ElseTests.class,
 
-		// data
-		AddJsonMapValueTests.class, GetVariableNamesTests.class, JsonToMapTests.class,
-		//
-		ListContainsTests.class, MapToJsonTests.class, NewListTests.class,
-		//
-		RemoveJsonMapValueTests.class, SortTests.class,
+// data
+AddJsonMapValueTests.class, GetVariableNamesTests.class, JsonToMapTests.class,
+//
+ListContainsTests.class, MapToJsonTests.class, NewListTests.class,
+//
+RemoveJsonMapValueTests.class, SortTests.class,
 
-		// date
-		DateToStringTests.class, StringToDateTests.class,
+// date
+DateToStringTests.class, StringToDateTests.class,
 
-		// string
-		AppendTests.class, StringReplaceTests.class, TokeniseTests.class
+// string
+AppendTests.class, StringReplaceTests.class, TokeniseTests.class
 
 })
 public class AllCommandTests

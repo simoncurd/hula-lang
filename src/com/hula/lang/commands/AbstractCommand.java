@@ -34,7 +34,7 @@ import com.hula.lang.util.DotNotationUtil;
 
 /**
  * This is an abstract implementation of the {@link Command} instance intended for
- * extension by concrete {@link Command} implementations. 
+ * extension by concrete {@link Command} implementations.
  */
 public abstract class AbstractCommand implements Command
 {
@@ -80,11 +80,11 @@ public abstract class AbstractCommand implements Command
 	}
 
 	@Override
-	public void setSignatureParameters(Map<String,String> parameters)
+	public void setSignatureParameters(Map<String, String> parameters)
 	{
 		this.signatureParameters = parameters;
 	}
-	
+
 	@Override
 	public String getSignatureParameter(String key)
 	{
@@ -117,10 +117,11 @@ public abstract class AbstractCommand implements Command
 
 	/**
 	 * Helper method which looks up the parameter value from the command signature.
-	 * When the parameter value is a reference (prepended with $), it will 
+	 * When the parameter value is a reference (prepended with $), it will
 	 * lookup the variable value from the runtime variables.<br/>
 	 * <br/>
-	 * For example: <br/><br/>
+	 * For example: <br/>
+	 * <br/>
 	 * CommandName name="MusicProduct" // returns a string object with value "MusicProduct"<br/>
 	 * CommandName name=$typeName // returns the object referenced as 'typeName' in the runtime variables
 	 * 
@@ -139,15 +140,16 @@ public abstract class AbstractCommand implements Command
 		}
 	}
 
-
 	/**
-	 * Helper method which sets a variable. If the value is a reference 
-	 * (prepended with $) it will lookup the referenced variable.<br/><br/>
+	 * Helper method which sets a variable. If the value is a reference
+	 * (prepended with $) it will lookup the referenced variable.<br/>
+	 * <br/>
 	 * 
-	 * For example:<br/><br/>
+	 * For example:<br/>
+	 * <br/>
 	 * 
 	 * name="John" sets a variable with name=John<br/>
-	 * name=$realname sets name to the value of variable $realname 
+	 * name=$realname sets name to the value of variable $realname
 	 * 
 	 * @param name The name of the variable to set
 	 * @param value The value of the variable to set
@@ -191,7 +193,7 @@ public abstract class AbstractCommand implements Command
 
 	/**
 	 * Helper method to return a variable value as a {@link String}.
-	 *  
+	 * 
 	 * @param name The name of the variable to find
 	 * @param connector The {@link RuntimeConnector} to use
 	 * @return The value of the variable as a {@link String}
@@ -241,7 +243,7 @@ public abstract class AbstractCommand implements Command
 	 */
 	public void validate(List<ParseError> errors)
 	{
-		
+
 	}
 
 	public void setInstanceId(String instanceId)
@@ -274,7 +276,7 @@ public abstract class AbstractCommand implements Command
 	protected void addBSHSignatureParameters(BeanShellScript script)
 	{
 		// get parameters
-		//Map<String, String> parameters = ParserUtil.getParametersFromCommandLine(commandLine);
+		// Map<String, String> parameters = ParserUtil.getParametersFromCommandLine(commandLine);
 		for (String key : signatureParameters.keySet())
 		{
 			script.add(instanceId + ".setSignatureParameter(" + quoted(key) + ", " + quoted(signatureParameters.get(key)) + ");");
@@ -303,6 +305,5 @@ public abstract class AbstractCommand implements Command
 	{
 		this.commandLine = commandLine;
 	}
-
 
 }

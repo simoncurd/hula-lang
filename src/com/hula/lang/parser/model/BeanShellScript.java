@@ -28,7 +28,8 @@ public class BeanShellScript
 
 	/**
 	 * Add a line of BeanShell to the script. Understands that braces mean
-	 * indentation. 
+	 * indentation.
+	 * 
 	 * @param line The line of BeanShell to add
 	 */
 	public void add(String line)
@@ -47,6 +48,7 @@ public class BeanShellScript
 
 	/**
 	 * Provides an indentation prefix with the correct quantity of whitespace
+	 * 
 	 * @return an indentation prefix
 	 */
 	private String indent()

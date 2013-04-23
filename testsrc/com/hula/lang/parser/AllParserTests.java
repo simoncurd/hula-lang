@@ -22,15 +22,12 @@ import org.junit.runners.Suite.SuiteClasses;
 import com.hula.lang.parser.util.ParserUtilTest;
 
 @RunWith(Suite.class)
-@SuiteClasses(
-{
-		ParserUtilTest.class,//
-		FailsWithValidationTests.class, //
-		HulaParserTests.class, //
-		NoReturnParamValidationTests.class, //
-		RequiresParamsValidationTests.class, //
-		RequiresReturnParamValidationTests.class
-})
+@SuiteClasses({ ParserUtilTest.class,//
+FailsWithValidationTests.class, //
+HulaParserTests.class, //
+NoReturnParamValidationTests.class, //
+RequiresParamsValidationTests.class, //
+RequiresReturnParamValidationTests.class })
 public class AllParserTests
 {
 

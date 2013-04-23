@@ -25,7 +25,7 @@ import com.hula.lang.runtime.RuntimeConnector;
 
 /**
  * An interface to define the methods required by Commands in the
- * Hula language. 
+ * Hula language.
  * 
  * Command instances are used to model Hula command lines at parse-time, and
  * optionally also at run-time (depending on implementation).
@@ -34,6 +34,7 @@ public interface Command
 {
 	/**
 	 * Set the signature parameters for this Command
+	 * 
 	 * @param parameters a Map of signature parameters
 	 */
 	void setSignatureParameters(Map<String, String> parameters);
@@ -41,11 +42,11 @@ public interface Command
 	/**
 	 * Set a signature parameter for this Command
 	 * 
-	 * @param name The name of the parameter 
+	 * @param name The name of the parameter
 	 * @param value The value of the parameter
 	 */
 	void setSignatureParameter(String name, String value);
-	
+
 	/**
 	 * Get the signature parameters from the Command
 	 * 

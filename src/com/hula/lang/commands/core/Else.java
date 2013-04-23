@@ -27,14 +27,18 @@ import com.hula.lang.runtime.RuntimeConnector;
 
 /**
  * The Else command is used to nest Commands which will be executed when no
- * other conditional command has evaluated true. 
- *  It always follows the {@link If} or {@link ElseIf} commands. <br/><br/>
+ * other conditional command has evaluated true.
+ * It always follows the {@link If} or {@link ElseIf} commands. <br/>
+ * <br/>
  * 
- * See also {@link If}, {@link ElseIf}<br/><br/>
+ * See also {@link If}, {@link ElseIf}<br/>
+ * <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
  * Output message if the name parameter is not matched<br/>
+ * 
  * <pre>
  * If $name="Jeff"
  *    Echo "My name is Jeff"
@@ -67,7 +71,6 @@ public class Else extends AbstractCommand
 		cm.addCommand(this);
 		cm.startNesting(this);
 	}
-
 
 	public void validate(List<ParseError> errors)
 	{

@@ -45,7 +45,7 @@ public class CommandFactoryImpl implements CommandFactory
 		{
 			in.close();
 		}
-		
+
 	}
 
 	@SuppressWarnings("unchecked")
@@ -73,8 +73,5 @@ public class CommandFactoryImpl implements CommandFactory
 			throw new UnknownCommandException("no command defined for commandId [" + id + "]");
 		}
 	}
-
-
-
 
 }

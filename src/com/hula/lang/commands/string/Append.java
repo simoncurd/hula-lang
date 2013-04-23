@@ -21,16 +21,19 @@ import com.hula.lang.model.RequiresReturnParam;
 import com.hula.lang.runtime.RuntimeConnector;
 
 /**
- * The Append command concatenates two strings. <br/><br/>
+ * The Append command concatenates two strings. <br/>
+ * <br/>
  * 
  * Example Usage:</br>
  * 
  * Join the value of a String called hello (hello="Hello, ") to a string
  * value containing "World!". Result? "Hello, World!". <br/>
- * <code>Append $hello, value="World!" as helloWorld</code><br/><br/>
+ * <code>Append $hello, value="World!" as helloWorld</code><br/>
+ * <br/>
  * 
  * Or:<br/>
- * <code>Append "Hello, ", value=$world as helloWorld</code><br/><br/>
+ * <code>Append "Hello, ", value=$world as helloWorld</code><br/>
+ * <br/>
  * 
  * Or, joining a first name and last name:<br/>
  * <code>Append $firstName, value=" " as $name</code><br/>
@@ -59,6 +62,5 @@ public class Append extends AbstractCommand
 		connector.setVariable(getReturnParameter(), target + value);
 
 	}
-
 
 }

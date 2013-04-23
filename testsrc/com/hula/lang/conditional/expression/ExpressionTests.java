@@ -15,7 +15,6 @@
  */
 package com.hula.lang.conditional.expression;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,8 +28,8 @@ public class ExpressionTests extends BaseExpressionTestCase
 	{
 		rc.setVariable("name", "Jeff");
 		rc.setVariable("age", "32");
-		
-		Map<String,String> person = new HashMap<String,String>();
+
+		Map<String, String> person = new HashMap<String, String>();
 		rc.setVariable("person", person);
 		person.put("name", "Jeff");
 
@@ -38,7 +37,7 @@ public class ExpressionTests extends BaseExpressionTestCase
 		Assert.assertTrue(eval("  $age = 32  AND  $name = \"Jeff\"   "));
 		Assert.assertTrue(eval("  $age = 32  AND  $name = (\"Jeff\")   "));
 		Assert.assertTrue(eval("  $age = 32  AND  ( $name = (\"Jeff\"))   "));
-		
+
 		Assert.assertTrue(eval("$person.name = \"Jeff\""));
 	}
 }

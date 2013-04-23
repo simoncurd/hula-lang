@@ -21,15 +21,19 @@ import com.hula.lang.model.RequiresReturnParam;
 import com.hula.lang.runtime.RuntimeConnector;
 
 /**
- * The StringReplace command replaces a substring. <br/><br/>
+ * The StringReplace command replaces a substring. <br/>
+ * <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
  * Replace a single character in a given string. Result is "ja ja ja"<br/>
- * <code>StringReplace "ha ha ha", match="h", with="j" as result</code><br/><br/>
+ * <code>StringReplace "ha ha ha", match="h", with="j" as result</code><br/>
+ * <br/>
  * 
  * Replace a section in a given string. Result is "Thisisastring". Match accepts a Regular Expression. <br/>
- * <code>StringReplace "This-is a_string", match="[ _-]", with="" as result</code><br/><br/>
+ * <code>StringReplace "This-is a_string", match="[ _-]", with="" as result</code><br/>
+ * <br/>
  */
 @RequiresReturnParam
 @RequiresParams(names = { "default", "match", "with" })

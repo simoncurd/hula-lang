@@ -23,10 +23,12 @@ import com.hula.lang.model.RequiresParams;
 import com.hula.lang.runtime.RuntimeConnector;
 
 /**
- * The AddToList command adds an object to a list. <br/><br/>
+ * The AddToList command adds an object to a list. <br/>
+ * <br/>
  * 
  * For example, the following command adds the value of the name variable to a
- * list variable called namelist.<br/><br/>
+ * list variable called namelist.<br/>
+ * <br/>
  * 
  * <code>AddToList $namelist, value=$name</code>
  */

@@ -24,10 +24,12 @@ import com.hula.lang.runtime.RuntimeConnector;
 /**
  * The GetDate command provides a Date for right now. <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
  * Get the date and time for right now. <br/>
- * <code>GetDate as now</code><br/><br/>
+ * <code>GetDate as now</code><br/>
+ * <br/>
  * 
  */
 @RequiresReturnParam

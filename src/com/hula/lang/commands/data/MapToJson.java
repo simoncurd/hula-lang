@@ -24,10 +24,12 @@ import com.hula.lang.model.RequiresReturnParam;
 import com.hula.lang.runtime.RuntimeConnector;
 
 /**
- * The MapToJson command converts the contents of a {@link Map} into a Json string.  
- * This command does the opposite of the {@link JsonToMap} command. <br/><br/>
+ * The MapToJson command converts the contents of a {@link Map} into a Json string.
+ * This command does the opposite of the {@link JsonToMap} command. <br/>
+ * <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
  * Converts a Map variable called mapObject into a Json string called jsonString.<br/>
  * <code>MapToJson $mapObject as jsonString</code>

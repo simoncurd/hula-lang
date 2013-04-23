@@ -55,7 +55,7 @@ public class ScriptRunner
 		if (scriptName.indexOf('/') != -1)
 		{
 			scriptPath = scriptName.substring(0, scriptName.lastIndexOf('/'));
-			scriptName = scriptName.substring(scriptName.lastIndexOf('/')+1);
+			scriptName = scriptName.substring(scriptName.lastIndexOf('/') + 1);
 		}
 		try
 		{

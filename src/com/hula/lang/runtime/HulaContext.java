@@ -37,6 +37,7 @@ public class HulaContext
 	/**
 	 * Contains the last exception caught during the execution of the HulaExecutable
 	 * by the {@link OnFail} command
+	 * 
 	 * @return HulaRuntimeException or null
 	 */
 	public HulaRuntimeException getLastException()

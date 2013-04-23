@@ -60,7 +60,7 @@ public class ParserUtil
 	 * Checks if a command line has a return parameter
 	 * 
 	 * @param commandLine The command line to inspect
-	 * @return boolean flag 
+	 * @return boolean flag
 	 */
 	public static boolean hasReturnParameter(String commandLine)
 	{
@@ -100,10 +100,10 @@ public class ParserUtil
 				// strip return parameter
 				commandLine = commandLine.substring(0, commandLine.lastIndexOf(" as "));
 			}
-			
+
 			// strip off the command
 			String parameterLine = stripCommandDeclaration(commandLine);
-			
+
 			if (!parameterLine.trim().equals(""))
 			{
 				// Contact, name=Jeff, Awesome
@@ -144,8 +144,8 @@ public class ParserUtil
 	}
 
 	/**
-	 * Tidy up a parameter value by trimming whitespace and stripping 
-	 * quotes. 
+	 * Tidy up a parameter value by trimming whitespace and stripping
+	 * quotes.
 	 * 
 	 * @param parameterValue The parameter value to tidy
 	 * @return The tidied parameter value
@@ -179,8 +179,8 @@ public class ParserUtil
 
 	/**
 	 * Tokenise the comma-separated parameters of a command line, respecting
-	 * commas in quoted sections. 
-	 *  
+	 * commas in quoted sections.
+	 * 
 	 * @param parameterString the parameterString to tokenise
 	 * @return a String[] of parameters
 	 */
@@ -240,7 +240,7 @@ public class ParserUtil
 		{
 			results[index] = resultList.get(index);
 		}
-		
+
 		return results;
 
 	}

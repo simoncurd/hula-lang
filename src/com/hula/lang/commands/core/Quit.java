@@ -17,20 +17,23 @@ package com.hula.lang.commands.core;
 
 import com.hula.lang.commands.AbstractCommand;
 import com.hula.lang.model.NoReturnParam;
-import com.hula.lang.parser.model.BeanShellScript;
 import com.hula.lang.runtime.RuntimeConnector;
 import com.hula.lang.runtime.exception.NestedQuitException;
 
 /**
  * The Quit command terminates the script immediately, to return control
- * to the container. All calling scripts (using the {@link Call} command) 
- * will also be terminated. <br/><br/>
+ * to the container. All calling scripts (using the {@link Call} command)
+ * will also be terminated. <br/>
+ * <br/>
  * 
- * See also: {@link Return}<br/><br/>
+ * See also: {@link Return}<br/>
+ * <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
  * Exit the script based on a variable value<br/>
+ * 
  * <pre>
  * If input="exit"
  *    Quit

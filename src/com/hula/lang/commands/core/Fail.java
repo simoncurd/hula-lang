@@ -20,16 +20,19 @@ import com.hula.lang.model.FailsWith;
 import com.hula.lang.runtime.RuntimeConnector;
 import com.hula.lang.runtime.exception.HulaRuntimeException;
 
-
 /**
- * The Fail command is used to indicate that a failure has occured. 
- * Execution will continue within the next {@link OnFail} command. <br/><br/>
+ * The Fail command is used to indicate that a failure has occured.
+ * Execution will continue within the next {@link OnFail} command. <br/>
+ * <br/>
  * 
- * See also {@link OnFail}<br/><br/>
+ * See also {@link OnFail}<br/>
+ * <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
  * Begin a failure process if the incorrect name is provided<br/>
+ * 
  * <pre>
  * Set name="Jeff"
  * If $name="Jeff"
@@ -41,7 +44,7 @@ import com.hula.lang.runtime.exception.HulaRuntimeException;
  * </pre>
  * 
  */
-@FailsWith(errorCodes={})
+@FailsWith(errorCodes = {})
 public class Fail extends AbstractCommand
 {
 
@@ -50,8 +53,8 @@ public class Fail extends AbstractCommand
 	{
 		String errorCode = getVariableValueAsString("default", connector);
 		String errorDescription = getVariableValueAsString("1", connector);
-		
+
 		throw new HulaRuntimeException(errorCode, errorDescription);
-		
+
 	}
 }

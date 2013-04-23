@@ -19,7 +19,7 @@ import java.util.Map;
 
 /**
  * An exception caused by a reference in a Hula script to an unknown
- * variable. 
+ * variable.
  */
 public class UndefinedVariableException extends HulaPlayerException
 {

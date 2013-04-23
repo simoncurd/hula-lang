@@ -21,15 +21,17 @@ import com.hula.lang.model.RequiresParams;
 import com.hula.lang.runtime.RuntimeConnector;
 
 /**
- * The Pause command waits for a specified number of seconds. <br/><br/>
+ * The Pause command waits for a specified number of seconds. <br/>
+ * <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
  * Wait for 5 seconds before proceeding<br/>
  * <code>Pause 5</code><br/>
  */
 @NoReturnParam
-@RequiresParams(names={"default"})
+@RequiresParams(names = { "default" })
 public class Pause extends AbstractCommand
 {
 

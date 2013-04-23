@@ -23,11 +23,14 @@ import com.hula.lang.runtime.RuntimeConnector;
 
 /**
  * The Skip command is used as part of the {@link Loop} command to
- * move immediately to the next list item. <br/><br/>
+ * move immediately to the next list item. <br/>
+ * <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
  * Don't print a certain name<br/>
+ * 
  * <pre>
  * Loop $nameList as $name
  *    If $name="Jeff"

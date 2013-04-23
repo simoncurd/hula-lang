@@ -26,11 +26,14 @@ import com.hula.lang.parser.util.ValidationUtil;
 import com.hula.lang.runtime.RuntimeConnector;
 
 /**
- * The End command is used to explicitly terminate a nested Command section. <br/><br/>
+ * The End command is used to explicitly terminate a nested Command section. <br/>
+ * <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
  * An example using the {@link If} command
+ * 
  * <pre>
  * If $value=1
  *    # do something
@@ -38,6 +41,7 @@ import com.hula.lang.runtime.RuntimeConnector;
  * </pre>
  * 
  * Multiple nesting using the {@link If} command
+ * 
  * <pre>
  * If $value > 1
  *    # do something
@@ -69,7 +73,6 @@ public class End extends AbstractCommand
 		}
 		cm.stopNesting();
 	}
-
 
 	public void validate(List<ParseError> errors)
 	{

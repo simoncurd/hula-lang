@@ -109,7 +109,7 @@ public class HulaPlayerImpl implements HulaPlayer
 				{
 					continue;
 				}
-				//logger.info("mapping [{}] [{}]", key, value);
+				// logger.info("mapping [{}] [{}]", key, value);
 
 				// add the variables to the HulaContext
 				hulaContext.setParameter(key, value);

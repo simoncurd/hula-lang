@@ -16,9 +16,9 @@
 package com.hula.lang.runtime.exception;
 
 /**
- * An unchecked exception which occurs during the execution 
+ * An unchecked exception which occurs during the execution
  * of a Hula Executable. Exceptions of this type will be handled
- * by the {@link com.hula.lang.runtime.HulaPlayer}. 
+ * by the {@link com.hula.lang.runtime.HulaPlayer}.
  */
 public class HulaRuntimeException extends RuntimeException
 {
@@ -36,7 +36,7 @@ public class HulaRuntimeException extends RuntimeException
 		super(errorDescription);
 		this.errorCode = errorCode;
 	}
-	
+
 	/**
 	 * Create a HulaException
 	 * 

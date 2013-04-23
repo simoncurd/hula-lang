@@ -28,6 +28,7 @@ public class NumericCompare
 	// package protected
 	BigDecimal left;
 	BigDecimal right;
+
 	public NumericCompare(Object op1, Object op2, RuntimeConnector rc)
 	{
 		op1 = OperatorUtil.resolveAlign(op1, rc, PreferredType.NUMBER);
@@ -39,7 +40,7 @@ public class NumericCompare
 			throw new RuntimeException("Cannot compare non-numbers");
 		}
 
-		left = (BigDecimal)op1;
-		right = (BigDecimal)op2;
+		left = (BigDecimal) op1;
+		right = (BigDecimal) op2;
 	}
 }

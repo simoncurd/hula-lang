@@ -19,7 +19,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * Indicates that a {@link Command} requires a return parameter. 
+ * Indicates that a {@link Command} requires a return parameter.
  */
 @Retention(RetentionPolicy.RUNTIME)
 public @interface RequiresReturnParam

@@ -46,6 +46,7 @@ public class SetTests extends BaseHulaTestCase
 		Assert.assertEquals("incorrect value set", "simon", hctx.getParameter("value"));
 
 	}
+
 	@Test
 	public void testSetInternalCheck() throws Exception
 	{
@@ -66,6 +67,7 @@ public class SetTests extends BaseHulaTestCase
 		Assert.assertEquals("incorrect value set", "true", hctx.getParameter("value2"));
 
 	}
+
 	@Test
 	public void testSetParameterInterdependencies() throws Exception
 	{
@@ -86,6 +88,7 @@ public class SetTests extends BaseHulaTestCase
 		Assert.assertEquals("incorrect value set", "32", person.get("age"));
 
 	}
+
 	@Test
 	public void testSetWithEquals() throws Exception
 	{
@@ -101,6 +104,7 @@ public class SetTests extends BaseHulaTestCase
 
 		Assert.assertEquals("incorrect value set", "a+b=c", hctx.getParameter("value"));
 	}
+
 	@Test
 	public void testValidateMethodFailsParsing() throws Exception
 	{

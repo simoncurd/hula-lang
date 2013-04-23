@@ -83,8 +83,6 @@ public class DotNotationUtil
 		return propertyPath;
 	}
 
-
-
 	public static void setProperty(String name, Object source, Object value, int index)
 	{
 		// last item in the path is the target property name
@@ -119,7 +117,7 @@ public class DotNotationUtil
 
 	/**
 	 * This inspects the property path of an object graph to return the value
-	 * of a property. Uses a dot notation based path. 
+	 * of a property. Uses a dot notation based path.
 	 * 
 	 * @param propertyPath The path to the property
 	 * @param root The root of the object graph
@@ -132,7 +130,7 @@ public class DotNotationUtil
 
 	/**
 	 * This inspects the property path of an object graph to return the value
-	 * of a property. Uses a dot notation based path. 
+	 * of a property. Uses a dot notation based path.
 	 * 
 	 * @param propertyPath The path to the property
 	 * @param root The root of the object graph
@@ -181,7 +179,7 @@ public class DotNotationUtil
 		}
 		catch (Throwable t)
 		{
-			logger.error("error getting property ["+t.getClass().getSimpleName() + "]", t);
+			logger.error("error getting property [" + t.getClass().getSimpleName() + "]", t);
 			return null;
 		}
 	}

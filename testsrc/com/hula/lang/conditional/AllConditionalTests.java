@@ -34,31 +34,29 @@ import com.hula.lang.conditional.term.StringParsingTests;
 import com.hula.lang.conditional.term.VariableReferenceParsingTests;
 
 @RunWith(Suite.class)
-@SuiteClasses(
-{
-		// Conditional
-		AndTests.class, //
-		OrTests.class,
+@SuiteClasses({
+// Conditional
+AndTests.class, //
+OrTests.class,
 
-		// Equality
-		EqualsTests.class, //
-		NotEqualsTests.class,
+// Equality
+EqualsTests.class, //
+NotEqualsTests.class,
 
-		// Relational
-		GreaterThanEqualToTests.class, //
-		GreaterThanTests.class, //
-		LessThanTests.class, //
-		LessThanEqualToTests.class,
+// Relational
+GreaterThanEqualToTests.class, //
+GreaterThanTests.class, //
+LessThanTests.class, //
+LessThanEqualToTests.class,
 
-		// Expressions
-		ExpressionTests.class,
+// Expressions
+ExpressionTests.class,
 
-		// Terms
-		BooleanParsingTests.class, //
-		StringParsingTests.class, //
-		VariableReferenceParsingTests.class, //
-		NumberParsingTests.class
-})
+// Terms
+BooleanParsingTests.class, //
+StringParsingTests.class, //
+VariableReferenceParsingTests.class, //
+NumberParsingTests.class })
 public class AllConditionalTests
 {
 

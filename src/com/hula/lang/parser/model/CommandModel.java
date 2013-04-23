@@ -22,7 +22,7 @@ import java.util.Stack;
 import com.hula.lang.model.Command;
 
 /**
- * A data structure used during the parsing of a Hula script. 
+ * A data structure used during the parsing of a Hula script.
  * Responsible for containing an object-based model of the script.
  */
 public class CommandModel
@@ -51,7 +51,7 @@ public class CommandModel
 	/**
 	 * Nest all additional commands added to the model under this parent command
 	 * 
-	 * @param command The command to nest further commands under 
+	 * @param command The command to nest further commands under
 	 */
 	public void startNesting(Command command)
 	{
@@ -60,7 +60,7 @@ public class CommandModel
 	}
 
 	/**
-	 * Stop nesting additional commands added to the model under the current 
+	 * Stop nesting additional commands added to the model under the current
 	 * parent command
 	 */
 	public void stopNesting()
@@ -104,7 +104,7 @@ public class CommandModel
 
 	/**
 	 * Get a list of parent Commands in the stack. Commands which are nested beneath
-	 * these can be retrieved by calling getCommands() from the parent Command. 
+	 * these can be retrieved by calling getCommands() from the parent Command.
 	 * 
 	 * @return a list of commands
 	 */
@@ -117,7 +117,7 @@ public class CommandModel
 	 * A helper method to find the last instance of a Command type at the current
 	 * nesting level
 	 * 
-	 * @param clazz The class type of the Command to match 
+	 * @param clazz The class type of the Command to match
 	 * @return the index of the Command instance, or -1
 	 */
 	public int lastIndexOf(Class clazz)
@@ -125,7 +125,7 @@ public class CommandModel
 		// get the last Command list on the stack
 		List<Command> thisLevel = this.stk.peek();
 
-		// count backwards through this Command list 
+		// count backwards through this Command list
 		for (int index = thisLevel.size() - 1; index != -1; index--)
 		{
 			// check for a Command of the specified type
@@ -136,7 +136,7 @@ public class CommandModel
 				return index;
 			}
 		}
-		
+
 		// no match found
 		return -1;
 	}
@@ -144,9 +144,9 @@ public class CommandModel
 	/**
 	 * A helper method to check if the Command model is nesting under a
 	 * Command of the specified type. For example, could be used to check if the
-	 * Loop Command would be a parent of the next Command added to the model 
-	 *  
-	 * @param clazz The class type of the Command to match 
+	 * Loop Command would be a parent of the next Command added to the model
+	 * 
+	 * @param clazz The class type of the Command to match
 	 * @return boolean indicating if the class type is a parent
 	 */
 	public boolean nestedUnder(Class clazz)
@@ -170,7 +170,7 @@ public class CommandModel
 				}
 			}
 		}
-		
+
 		// no match found
 		return false;
 

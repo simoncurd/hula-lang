@@ -24,19 +24,22 @@ import com.hula.lang.runtime.RuntimeConnector;
 
 /**
  * The NewMap command creates a new Map, optionally initialised
- * with some values. <br/><br/>
+ * with some values. <br/>
+ * <br/>
  * 
- * Example Usage: <br/><br/> 
+ * Example Usage: <br/>
+ * <br/>
  * 
- *  Creates an empty map <br/>
- * <code>NewMap as map1</code>
- * <br/><br/>
+ * Creates an empty map <br/>
+ * <code>NewMap as map1</code> <br/>
+ * <br/>
  * 
  * Create an map where name="Jeff"<br/>
- * <code>NewMap name="Jeff" as map2</code>
- * <br/><br/>
+ * <code>NewMap name="Jeff" as map2</code> <br/>
+ * <br/>
  * 
  * Create an nested map<br/>
+ * 
  * <pre>
  * NewMap name="Jeff" as person1
  * NewMap person=$person1, postcode="SW19 4PU" as address
@@ -68,6 +71,5 @@ public class NewMap extends AbstractCommand
 
 		connector.setVariable(getReturnParameter(), map);
 	}
-
 
 }

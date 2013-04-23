@@ -16,22 +16,22 @@
 package com.hula.lang.parser.exception;
 
 /**
- * Responsible for reporting a specific error raised by the {@link com.hula.lang.parser.HulaParser}. 
+ * Responsible for reporting a specific error raised by the {@link com.hula.lang.parser.HulaParser}.
  */
 public class ParseError extends Exception
 {
 	// the Hula script line number
 	private int lineNumber;
-	
+
 	// the command line which caused the error
 	private String commandLine;
-	
+
 	// the error code
 	private String errorCode;
-	
+
 	// parameters of the error
 	private String[] params;
-	
+
 	// the specific error thrown
 	private Throwable throwable;
 

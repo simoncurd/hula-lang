@@ -21,7 +21,7 @@ import com.hula.lang.parser.HulaExecutable;
 import com.hula.lang.parser.exception.HulaParserException;
 
 /**
- * Responsible for reading and parsing Hula scripts. 
+ * Responsible for reading and parsing Hula scripts.
  */
 public interface ScriptReader
 {

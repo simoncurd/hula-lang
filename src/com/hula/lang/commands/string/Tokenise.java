@@ -28,23 +28,29 @@ import com.hula.lang.runtime.RuntimeConnector;
 
 /**
  * The Tokenise command splits a value containing delimiter-separated tokens
- * into a list of separate values. <br/><br/>
- * The default delimiter is comma.<br/><br/>
+ * into a list of separate values. <br/>
+ * <br/>
+ * The default delimiter is comma.<br/>
+ * <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
  * Split a string of comma-separated tokens into a list.<br/>
- * <code>Tokenise "Jeff,John,Sam" as namelist</code><br/><br/>
+ * <code>Tokenise "Jeff,John,Sam" as namelist</code><br/>
+ * <br/>
  * 
  * Split a string of colon-separated tokens into a list.<br/>
- * <code>Tokenise "Jeff:John:Sam", delimiter=":" as namelist</code><br/><br/>
+ * <code>Tokenise "Jeff:John:Sam", delimiter=":" as namelist</code><br/>
+ * <br/>
  * 
  * Split a string of tokens into a list using a regex delimiter.<br/>
- * <code>Tokenise "Jeff_John Sam", delimiter="[_ ]" as namelist</code><br/><br/>
+ * <code>Tokenise "Jeff_John Sam", delimiter="[_ ]" as namelist</code><br/>
+ * <br/>
  * 
  */
 @RequiresReturnParam
-@RequiresParams(names={"default"})
+@RequiresParams(names = { "default" })
 public class Tokenise extends AbstractCommand
 {
 
@@ -55,22 +61,22 @@ public class Tokenise extends AbstractCommand
 		String value = getVariableValueAsString("default", connector);
 		if (value == null)
 		{
-			//throw new HulaRuntimeException("no.value", "no value for parameter [" + getSignatureParameter("default") + "]");
+			// throw new HulaRuntimeException("no.value", "no value for parameter [" + getSignatureParameter("default") + "]");
 			connector.setVariable(getReturnParameter(), new ArrayList<String>(0));
 		}
-		
+
 		String delimiter = getVariableValueAsString("delimiter", connector);
-		
+
 		if (StringUtils.isEmpty(delimiter))
 		{
 			delimiter = ",";
 		}
-		
+
 		String[] values = value.split(delimiter);
 		List<String> results = Arrays.asList(values);
-		
+
 		connector.setVariable(getReturnParameter(), results);
-		
+
 	}
 
 }

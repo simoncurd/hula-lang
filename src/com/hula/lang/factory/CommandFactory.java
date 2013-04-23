@@ -32,17 +32,19 @@ public interface CommandFactory
 	 * @return The Command instance
 	 */
 	Command getCommandInstance(String id) throws CommandFactoryException;
-	
+
 	/**
 	 * Loads a property file containing Commands. Commands are defined
-	 * in the following format:<br/><br/>
+	 * in the following format:<br/>
+	 * <br/>
 	 * 
-	 * <code>Comment=com.hula.lang.commands.core.Comment</code><br/><br/>
+	 * <code>Comment=com.hula.lang.commands.core.Comment</code><br/>
+	 * <br/>
 	 * 
 	 * Multiple command files can be loaded
 	 * 
 	 * @param filename The filename of the properties file
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	void loadCommands(String filename) throws IOException;
 }

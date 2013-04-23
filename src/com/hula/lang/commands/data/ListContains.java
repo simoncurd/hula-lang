@@ -28,25 +28,27 @@ import com.hula.lang.runtime.exception.HulaRuntimeException;
 
 /**
  * The ListContains command checks through a list of objects for a match
- * to a value or reference. <br/><br/>
+ * to a value or reference. <br/>
+ * <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
  * Check a list of names called namelist if the name "Jeff" appears. Put the result
- * (a {@link Boolean}) in a variable called present.<br/> 
- * <code>ListContains $namelist, value="Jeff" as present</code>
- * <br/><br/>
+ * (a {@link Boolean}) in a variable called present.<br/>
+ * <code>ListContains $namelist, value="Jeff" as present</code> <br/>
+ * <br/>
  * 
  * Check a list of objects called personlist if a person with name "Jeff" appears.
  * Put the result (a {@link Boolean}) in a variable called present. This assumes
  * all objects have an attribute called name. <br/>
- * <code>ListContains $personlist, path=name, value="Jeff" as present</code>
- * <br/><br/>
+ * <code>ListContains $personlist, path=name, value="Jeff" as present</code> <br/>
+ * <br/>
  * 
  * Check a list of objects called addresslist if the person referenced by the
- * address has name "Jeff". 
+ * address has name "Jeff".
  * Put the result (a {@link Boolean}) in a variable called present. This assumes
- * all address objects has a reference to a person object, which have an 
+ * all address objects has a reference to a person object, which have an
  * attribute called name. <br/>
  * <code>ListContains $addresslist, path=person.name, value="Jeff" as present</code>
  */

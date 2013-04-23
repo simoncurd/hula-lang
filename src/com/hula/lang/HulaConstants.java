@@ -24,5 +24,5 @@ public class HulaConstants
 	public static final String runtimeConnector = "rconn";
 	public static final String hulaContext = "h_ctx";
 	public static final String beanShellId = "bsh";
-	public static final String lineNumber = "h_f_linenum"; 
+	public static final String lineNumber = "h_f_linenum";
 }

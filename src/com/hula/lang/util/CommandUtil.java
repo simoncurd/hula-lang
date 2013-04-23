@@ -28,17 +28,17 @@ public class CommandUtil
 	// regular expression for identifying references in a string
 	private static Pattern referencePattern = Pattern.compile("\\$([a-z\\._A-Z0-9]|\\[[0-9]\\])*");
 
-
 	/**
 	 * Evaluates whether a name is a variable reference
+	 * 
 	 * @param name the name to evaluate
 	 * @return boolean indicating whether this is a variable reference
 	 */
 	public static boolean isVariableReference(String name)
-	{		
+	{
 		return name != null && name.startsWith("$") && name.indexOf(' ') == -1;
 	}
-	
+
 	/**
 	 * Given a string value, this checks if it contains any references and replaces
 	 * them with their variable values
@@ -77,11 +77,11 @@ public class CommandUtil
 		}
 		return string;
 	}
-	
+
 	/**
 	 * Get the value of the referenced variable. This handles variables referenced
 	 * using a dot notation path, such as $person.address.streetName.
-	 *  
+	 * 
 	 * @param reference The reference to the variable
 	 * @param connector The {@link RuntimeConnector}
 	 * @return The value of the variable

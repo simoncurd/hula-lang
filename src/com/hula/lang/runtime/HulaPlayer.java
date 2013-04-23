@@ -26,7 +26,7 @@ import com.hula.lang.runtime.exception.HulaPlayerException;
 public interface HulaPlayer
 {
 	/**
-	 * Runs a Hula script 
+	 * Runs a Hula script
 	 * 
 	 * @param scriptName The name of the script to run
 	 * @param hctx The context to use during execution

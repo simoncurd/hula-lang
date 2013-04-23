@@ -1,0 +1,4 @@
+NewMap as response
+Set $response.name="Jeff",$response.age=32
+MapToJson $response as responseJson
+Echo $responseJson  

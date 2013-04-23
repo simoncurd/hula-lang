@@ -24,12 +24,9 @@ import com.hula.lang.conditional.AllConditionalTests;
 import com.hula.lang.parser.AllParserTests;
 
 @RunWith(Suite.class)
-@SuiteClasses(
-{
-		AllConditionalTests.class, //
-		AllCommandTests.class, //
-		AllParserTests.class
-})
+@SuiteClasses({ AllConditionalTests.class, //
+AllCommandTests.class, //
+AllParserTests.class })
 public class AllTests
 {
 

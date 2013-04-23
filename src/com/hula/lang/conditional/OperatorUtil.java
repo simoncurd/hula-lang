@@ -64,7 +64,6 @@ public class OperatorUtil
 		return !testEquals(op1, op2, rc);
 	}
 
-
 	/**
 	 * Processes greater-than operations (>).
 	 * 

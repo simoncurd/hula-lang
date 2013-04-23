@@ -27,16 +27,18 @@ import com.hula.lang.parser.util.ValidationUtil;
 import com.hula.lang.runtime.RuntimeConnector;
 
 /**
- * The Set command assigns a variable value. <br/><br/>
+ * The Set command assigns a variable value. <br/>
+ * <br/>
  * 
- * Example Usage:<br/><br/>
+ * Example Usage:<br/>
+ * <br/>
  * 
- * Set a variable to a string</br/>
- * <code>Set name="Jeff"</code><br/><br/>
+ * Set a variable to a string</br/> <code>Set name="Jeff"</code><br/>
+ * <br/>
  * 
- * Multiple assignments can be made in one statement, which are processed 
+ * Multiple assignments can be made in one statement, which are processed
  * from left to right. As shown below, age is set in parameter 2, then used
- * in parameter 3.<br/> 
+ * in parameter 3.<br/>
  * <code>Set name=$person.name, age=32, $person.age=$age</code>
  */
 @NoReturnParam
