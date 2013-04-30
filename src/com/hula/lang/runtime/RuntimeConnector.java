@@ -37,6 +37,9 @@ public class RuntimeConnector
 	// a reference to the script reader we're using
 	private ScriptReader scriptReader = null;
 
+	// a reference to the service proxy we're using
+	private ServiceProxy serviceProxy = null;
+	
 	/**
 	 * Create a new RuntimeConnector
 	 * 
@@ -49,6 +52,20 @@ public class RuntimeConnector
 		this.scriptReader = scriptReader;
 	}
 
+	/**
+	 * Create a new RuntimeConnector
+	 * 
+	 * @param interpreter The interpreter we're parsing with
+	 * @param scriptReader The script reader to use if loading additional scripts
+	 * @param serviceProxy The ServiceProxy we're using to access services
+	 */
+	public RuntimeConnector(Interpreter interpreter, ScriptReader scriptReader, ServiceProxy serviceProxy)
+	{
+		this.interpreter = interpreter;
+		this.scriptReader = scriptReader;
+		this.serviceProxy = serviceProxy;
+	}
+	
 	/**
 	 * Get the interpreter in use
 	 * 
@@ -154,4 +171,22 @@ public class RuntimeConnector
 		}
 		return results;
 	}
+
+	public ServiceProxy getServiceProxy()
+	{
+		return serviceProxy;
+	}
+	
+	/**
+	 * Helper method for lookup of services
+	 * 
+	 * @param type The service type
+	 * @return The requested service
+	 */
+	public <T> T getService(Class<T> type)
+	{
+		return serviceProxy.getInstance(type);
+	}
+	
+	
 }

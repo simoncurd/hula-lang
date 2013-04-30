@@ -47,12 +47,20 @@ public class HulaPlayerImpl implements HulaPlayer
 
 	private Logger logger = LoggerFactory.getLogger(HulaPlayerImpl.class);
 	private Interpreter interpreter = null;
-	private ScriptReader scriptReader;
+	private ScriptReader scriptReader = null;
+	private ServiceProxy serviceProxy = null;
 
 	public HulaPlayerImpl(ScriptReader scriptReader)
 	{
 		this.interpreter = new Interpreter();
 		this.scriptReader = scriptReader;
+	}
+
+	public HulaPlayerImpl(ScriptReader scriptReader, ServiceProxy serviceProxy)
+	{
+		this.interpreter = new Interpreter();
+		this.scriptReader = scriptReader;
+		this.serviceProxy = serviceProxy;
 	}
 
 	@Override
@@ -73,7 +81,7 @@ public class HulaPlayerImpl implements HulaPlayer
 			// the connector to be provided to the interpreter at runtime
 			// connector gets a reference to the interpreter so that Commands
 			// can get to variable values
-			RuntimeConnector runtimeConnector = new RuntimeConnector(interpreter, scriptReader);
+			RuntimeConnector runtimeConnector = new RuntimeConnector(interpreter, scriptReader, serviceProxy);
 
 			// interpreter gets a reference to the connector so that
 			// Commands can get to variable values

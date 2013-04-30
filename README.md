@@ -79,14 +79,14 @@ Note:
 
 # Latest Version
 
-* The current release is version 0.1 alpha 1. 
+* Version 0.1.1
 
 # Roadmap
 
 Key Features for future versions:
 
-* A broader Command set
 * Performance improvements
+* A broader Command set
 
 # Contributing
 

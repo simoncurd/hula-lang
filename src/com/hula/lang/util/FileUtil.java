@@ -18,7 +18,9 @@ package com.hula.lang.util;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
+import java.util.Properties;
 
 /**
  * A utility class with helper methods for working with files
@@ -51,5 +53,36 @@ public class FileUtil
 			}
 		}
 		return in;
+	}
+	
+	/**
+	 * Utility method for loading a properties file from the classpath
+	 * @param filename The name of the properties file
+	 * @return The loaded Properties file
+	 */
+	public static Properties loadProperties(String filename)
+	{
+		Properties properties = new Properties();
+		InputStream in = FileUtil.getFileInputStream(filename);
+		try
+		{
+			properties.load(in);
+		}
+		catch (IOException e)
+		{
+			throw new RuntimeException("error loading config properties", e);
+		}
+		finally
+		{
+			try
+			{
+				in.close();
+			}
+			catch (IOException e)
+			{
+				// swallow - nothing we can do about this
+			}
+		}
+		return properties;
 	}
 }
