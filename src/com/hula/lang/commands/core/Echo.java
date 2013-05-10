@@ -59,9 +59,6 @@ public class Echo extends AbstractCommand
 	public void execute(RuntimeConnector connector)
 	{
 		String value = getVariableValueAsString("default", connector);
-
-		value = CommandUtil.replaceReferences(value, connector);
-
 		String type = getVariableValueAsString("type", connector);
 
 		if (type != null && type.equals("error"))

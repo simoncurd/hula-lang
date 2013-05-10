@@ -134,10 +134,15 @@ public abstract class AbstractCommand implements Command
 		{
 			return CommandUtil.getReferencedVariableValue(parameterValue, connector);
 		}
+		else if (CommandUtil.containsVariableReference(parameterValue))
+		{
+			return CommandUtil.replaceReferences(parameterValue, connector);
+		}
 		else
 		{
 			return parameterValue;
 		}
+
 	}
 
 	/**

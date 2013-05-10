@@ -38,6 +38,17 @@ public class CommandUtil
 	{
 		return name != null && name.startsWith("$") && name.indexOf(' ') == -1;
 	}
+	
+	/**
+	 * Evaluates whether a value contains a variable reference
+	 * 
+	 * @param value the value to evaluate
+	 * @return boolean indicating whether this value contains a variable reference
+	 */	
+	public static boolean containsVariableReference(String value)
+	{
+		return value != null && value.indexOf('$') != -1;
+	}
 
 	/**
 	 * Given a string value, this checks if it contains any references and replaces

@@ -13,23 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hula.lang;
+package com.hula.lang.runtime;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import com.hula.lang.commands.AllCommandTests;
-import com.hula.lang.conditional.AllConditionalTests;
-import com.hula.lang.parser.AllParserTests;
-import com.hula.lang.runtime.AllRuntimeTests;
-
 @RunWith(Suite.class)
-@SuiteClasses({ AllConditionalTests.class, //
-AllCommandTests.class, //
-AllRuntimeTests.class, //
-AllParserTests.class })
-public class AllTests
+@SuiteClasses({ HulaRuntimeTests.class  })
+public class AllRuntimeTests
 {
 
 }

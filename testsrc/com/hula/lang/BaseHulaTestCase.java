@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.PropertyConfigurator;
 import org.junit.Assert;
 import org.junit.Before;
 
@@ -49,6 +50,8 @@ public abstract class BaseHulaTestCase
 	@Before
 	public void setUp() throws Exception
 	{
+		PropertyConfigurator.configure("conf/log4j.properties");
+		
 		CommandFactory commandFactory = new CommandFactoryImpl();
 
 		commandFactory.loadCommands("conf/lang.commands.properties");
