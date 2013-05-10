@@ -128,13 +128,8 @@ public abstract class AbstractCommand implements Command
 	 */
 	public Object getVariableValue(String parameterKey, RuntimeConnector connector)
 	{
-		String parameterValue = getSignatureParameter(parameterKey);
-
-		if (CommandUtil.isVariableReference(parameterValue))
-		{
-			return CommandUtil.getReferencedVariableValue(parameterValue, connector);
-		}
-		else if (CommandUtil.containsVariableReference(parameterValue))
+		String parameterValue = getSignatureParameter(parameterKey); 
+		if (CommandUtil.containsVariableReference(parameterValue))
 		{
 			return CommandUtil.replaceReferences(parameterValue, connector);
 		}
