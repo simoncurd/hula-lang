@@ -25,6 +25,7 @@ import java.util.Map;
  */
 public class ParserUtil
 {
+	private static final char EQUALS = '=';
 	private static final char COMMA = ',';
 	private static final char QUOTE = '\"';
 
@@ -112,8 +113,10 @@ public class ParserUtil
 				int count = 0;
 				for (String parameterStr : parameterParts)
 				{
+					String[] parts = splitOnEquals(parameterStr);
+					
 					// if no parameter name is specified
-					if (parameterStr.indexOf("=") == -1)
+					if (parts.length == 1)
 					{
 						parameterStr = trimAndStripQuotes(parameterStr);
 
@@ -126,21 +129,52 @@ public class ParserUtil
 					}
 					else
 					{
-						int pos = parameterStr.indexOf('=');
-						String[] parts = new String[2];
-						parts[0] = parameterStr.substring(0, pos);
-						parts[1] = parameterStr.substring(pos + 1, parameterStr.length());
-
 						// trim & strip encapsulating quotes
+						parts[0] = trimAndStripQuotes(parts[0]);
 						parts[1] = trimAndStripQuotes(parts[1]);
 
-						parameters.put(parts[0].trim(), parts[1]);
+						parameters.put(parts[0], parts[1]);
 					}
 				}
 			}
 		}
 
 		return parameters;
+	}
+	
+	/**
+	 * Attempts to split a string on the EQUALS character, with support for
+	 * scenarios where the EQUALS in is QUOTES.
+	 * 
+	 * @param parameterString The string to split
+	 * @return A String[] containing [key,value], or [value] if no equals detected
+	 */
+	public static String[] splitOnEquals(String parameterString)
+	{
+		// flags
+		boolean inQuotedToken = false;
+
+		// interpret the line char by char and tokenise the parameterString
+		for (int pos = 0; pos != parameterString.length(); pos++)
+		{
+			char c = parameterString.charAt(pos);
+			if (c == QUOTE && inQuotedToken == false)
+			{
+				inQuotedToken = true;
+			}
+			else if (c == QUOTE && inQuotedToken == true)
+			{
+				inQuotedToken = false;
+			}
+			else if (c == EQUALS && inQuotedToken == false)
+			{
+				String[] parts = new String[2];
+				parts[0] = parameterString.substring(0, pos);
+				parts[1] = parameterString.substring(pos+1, parameterString.length());
+				return parts;
+			}
+		}
+		return new String[] { parameterString };
 	}
 
 	/**

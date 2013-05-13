@@ -158,4 +158,46 @@ public class EqualsTests extends BaseExpressionTestCase
 		Assert.assertTrue(eval("$weighta = $weightb"));
 	}
 
+	/***************************************
+	 * Null Tests
+	 ***************************************/
+	@Test
+	public void testNullEqualsNull() throws Exception
+	{
+		Assert.assertTrue(eval("null = null"));
+	}
+	
+	@Test
+	public void testNullEqualsString() throws Exception
+	{
+		Assert.assertFalse(eval("null = \"Jeff\""));
+	}
+
+	@Test
+	public void testNullEqualsNumber() throws Exception
+	{
+		Assert.assertFalse(eval("null = 32"));
+	}
+	
+
+	@Test
+	public void testNullEqualsBoolean() throws Exception
+	{
+		Assert.assertFalse(eval("null = true"));
+	}
+	
+
+	@Test
+	public void testNullEqualsNullVariableReference() throws Exception
+	{
+		Assert.assertTrue(eval("null = $name"));
+	}
+	
+
+	@Test
+	public void testNullVariableReferenceEqualsVariableReference() throws Exception
+	{
+		Assert.assertTrue(eval("$name = $name"));
+	}
+
 }

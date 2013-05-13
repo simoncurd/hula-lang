@@ -68,6 +68,7 @@ term
 	|	STRING
 	|	NUMBER
 	|	BOOLEAN
+	|	NULL
 	;
 
 relation
@@ -83,6 +84,9 @@ BOOLEAN
 	|	'false'
 	;
 
+NULL
+	:	'null'
+	;
 
 STRING	: '"' .* '"';
 

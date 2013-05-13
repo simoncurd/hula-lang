@@ -60,6 +60,7 @@ expression returns [Object result]
 	|	STRING { result = new String($STRING.text); }
 	|	NUMBER { result = new BigDecimal($NUMBER.text); }
 	|	BOOLEAN { result = new Boolean($BOOLEAN.text); }
+	|	NULL { result = null; }
 	;
 	
 	

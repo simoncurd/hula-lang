@@ -217,33 +217,6 @@ public class HulaParserTests extends BaseHulaTestCase
 
 	}
 
-	@Test
-	public void testNPEThrowCorrectException() throws Exception
-	{
-		ScriptWrapper wrapper = new ScriptWrapper();
-		wrapper.addLine("Echo meh");
-		wrapper.addLine("If $s1 = \"yes\"");
-		wrapper.addLine("End");
-
-		// parse
-		HulaExecutable parserResult = parseAndAssert(wrapper.toString());
-
-		// run
-		HulaContext hctx = new HulaContext();
-
-		try
-		{
-			evaluateBeanShell(parserResult, hctx);
-			Assert.fail("expected validate to fail");
-		}
-		catch (HulaPlayerException e)
-		{
-			// expected behaviour
-			// assertEquals("incorrect variable name", "s1", e.getVariableName());
-			Assert.assertEquals("incorrect line number", 2, e.getLineNumber());
-		}
-
-	}
 
 	@Test
 	public void testUnknownCommandFailsParsing_2() throws Exception
@@ -334,4 +307,38 @@ public class HulaParserTests extends BaseHulaTestCase
 		parser.parse(wrapper.toString());
 
 	}
+	
+	@Test
+	public void testEqualsInQuotedString() throws Exception
+	{
+		ScriptWrapper wrapper = new ScriptWrapper();
+		wrapper.addLine("Echo \"pageId = $pageId\"");
+
+		parser.parse(wrapper.toString());
+
+	}
+	
+
+	@Test
+	public void testEqualsInQuotedAssignment() throws Exception
+	{
+		ScriptWrapper wrapper = new ScriptWrapper();
+		wrapper.addLine("Set \"=\"=$equals");
+
+		parser.parse(wrapper.toString());
+
+	}
+	
+
+	@Test
+	public void testEqualsInQuotedAssignment2() throws Exception
+	{
+		ScriptWrapper wrapper = new ScriptWrapper();
+		wrapper.addLine("Set $equals=\"=\"");
+
+		parser.parse(wrapper.toString());
+
+	}
+
+
 }

@@ -184,4 +184,80 @@ public class GreaterThanEqualToTests extends BaseExpressionTestCase
 		Assert.assertTrue(eval("$weighta >= $weightb"));
 	}
 
+
+	/***************************************
+	 * Null Tests
+	 ***************************************/
+
+	@Test
+	public void testNullGreaterThanEqualToNull() throws Exception
+	{
+		try
+		{
+			Assert.assertTrue(eval("null >= null"));
+			Assert.fail("cannot compare non-boolean values");
+		}
+		catch (RuntimeException e)
+		{
+			// expected behaviour
+		}
+	}
+	
+
+	@Test
+	public void testBooleanGreaterThanEqualToNull() throws Exception
+	{
+		try
+		{
+			Assert.assertTrue(eval("true >= null"));
+			Assert.fail("cannot compare non-boolean values");
+		}
+		catch (RuntimeException e)
+		{
+			// expected behaviour
+		}
+	}
+	
+
+	@Test
+	public void testNumberGreaterThanEqualToNull() throws Exception
+	{
+		try
+		{
+			Assert.assertTrue(eval("32 >= null"));
+			Assert.fail("cannot compare non-boolean values");
+		}
+		catch (RuntimeException e)
+		{
+			// expected behaviour
+		}
+	}
+
+	@Test
+	public void testStringGreaterThanEqualToNull() throws Exception
+	{
+		try
+		{
+			Assert.assertTrue(eval("\"32\" >= null"));
+			Assert.fail("cannot compare non-boolean values");
+		}
+		catch (RuntimeException e)
+		{
+			// expected behaviour
+		}
+	}
+
+	@Test
+	public void testVariableReferenceGreaterThanEqualToNull() throws Exception
+	{
+		try
+		{
+			Assert.assertTrue(eval("$name >= null"));
+			Assert.fail("cannot compare non-boolean values");
+		}
+		catch (RuntimeException e)
+		{
+			// expected behaviour
+		}
+	}
 }

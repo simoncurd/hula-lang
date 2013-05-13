@@ -66,4 +66,75 @@ public class OrTests extends BaseExpressionTestCase
 		}
 	}
 
+
+	@Test
+	public void testBooleanOrNull() throws Exception
+	{
+		try
+		{
+			Assert.assertFalse(eval("true OR null"));
+			Assert.fail("cannot compare non-boolean values");
+		}
+		catch (RuntimeException e)
+		{
+			// expected result
+		}
+	}
+
+	@Test
+	public void testStringOrNull() throws Exception
+	{
+		try
+		{
+			Assert.assertFalse(eval("\"Jeff\" OR null"));
+			Assert.fail("cannot compare non-boolean values");
+		}
+		catch (RuntimeException e)
+		{
+			// expected result
+		}
+	}
+	
+
+	@Test
+	public void testNumberOrNull() throws Exception
+	{
+		try
+		{
+			Assert.assertFalse(eval("32 OR null"));
+			Assert.fail("cannot compare non-boolean values");
+		}
+		catch (RuntimeException e)
+		{
+			// expected result
+		}
+	}
+
+	@Test
+	public void testNullOrNull() throws Exception
+	{
+		try
+		{
+			Assert.assertFalse(eval("null OR null"));
+			Assert.fail("cannot compare non-boolean values");
+		}
+		catch (RuntimeException e)
+		{
+			// expected result
+		}
+	}	
+
+	@Test
+	public void testVariableReferenceOrNull() throws Exception
+	{
+		try
+		{
+			Assert.assertFalse(eval("$test OR null"));
+			Assert.fail("cannot compare non-boolean values");
+		}
+		catch (RuntimeException e)
+		{
+			// expected result
+		}
+	}		
 }

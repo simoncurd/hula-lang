@@ -41,8 +41,17 @@ public class OperatorUtil
 		op1 = resolveAlign(op1, rc);
 		op2 = resolveAlign(op2, rc);
 
+		if (op1 == null && op2 == null)
+		{
+			return true;
+		}
+		else if (op1 == null || op2 == null)
+		{
+			return false;
+		}
+		
 		// if the class types don't match, compare as strings
-		if (!op1.getClass().equals(op2.getClass()))
+		else if (!op1.getClass().equals(op2.getClass()))
 		{
 			op1 = op1.toString();
 			op2 = op2.toString();

@@ -38,4 +38,26 @@ public class ParserUtilTest extends TestCase
 		assertTrue("incorrect result", ParserUtil.hasParameters("Command param, param"));
 		assertFalse("incorrect result", ParserUtil.hasParameters("Command "));
 	}
+	
+	@Test
+	public void testEqualsInQuotes() throws Exception
+	{
+		String[] results = ParserUtil.splitOnEquals("a=b");
+		assertEquals("wrong number of values", 2, results.length);
+		
+		results = ParserUtil.splitOnEquals("a=\"=\"");
+		assertEquals("wrong number of values", 2, results.length);
+		assertEquals("wrong value" ,"a", results[0]);
+		assertEquals("wrong value" ,"\"=\"", results[1]);
+		
+		results = ParserUtil.splitOnEquals("\"=\"=a");
+		assertEquals("wrong number of values", 2, results.length);
+		assertEquals("wrong value" ,"\"=\"", results[0]);
+		assertEquals("wrong value" ,"a", results[1]);
+
+		results = ParserUtil.splitOnEquals("\"=\"");
+		assertEquals("wrong number of values", 1, results.length);
+		assertEquals("wrong value" ,"\"=\"", results[0]);
+		
+	}
 }

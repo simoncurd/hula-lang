@@ -77,4 +77,75 @@ public class AndTests extends BaseExpressionTestCase
 		Assert.assertFalse(eval("(false AND false) OR (false AND false)"));
 	}
 
+	@Test
+	public void testBooleanAndNull() throws Exception
+	{
+		try
+		{
+			Assert.assertFalse(eval("true AND null"));
+			Assert.fail("test should fail");
+		}
+		catch (RuntimeException e)
+		{
+			// expected result
+		}
+	}
+
+	@Test
+	public void testStringAndNull() throws Exception
+	{
+		try
+		{
+			Assert.assertFalse(eval("\"Jeff\" AND null"));
+			Assert.fail("test should fail");
+		}
+		catch (RuntimeException e)
+		{
+			// expected result
+		}
+	}
+	
+
+	@Test
+	public void testNumberAndNull() throws Exception
+	{
+		try
+		{
+			Assert.assertFalse(eval("32 AND null"));
+			Assert.fail("test should fail");
+		}
+		catch (RuntimeException e)
+		{
+			// expected result
+		}
+	}
+
+	@Test
+	public void testNullAndNull() throws Exception
+	{
+		try
+		{
+			Assert.assertFalse(eval("null AND null"));
+			Assert.fail("test should fail");
+		}
+		catch (RuntimeException e)
+		{
+			// expected result
+		}
+	}	
+
+	@Test
+	public void testVariableReferenceAndNull() throws Exception
+	{
+		try
+		{
+			Assert.assertFalse(eval("$test AND null"));
+			Assert.fail("test should fail");
+		}
+		catch (RuntimeException e)
+		{
+			// expected result
+		}
+	}		
+
 }

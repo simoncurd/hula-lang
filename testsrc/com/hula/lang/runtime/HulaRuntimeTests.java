@@ -42,4 +42,45 @@ public class HulaRuntimeTests extends BaseHulaTestCase
 		Assert.assertEquals("incorrect eventURL", "/latest-gadgets-live/event/123", hctx.getParameter("eventURL"));
 
 	}
+	
+	@Test
+	public void testUndefinedVariableIsNull() throws Exception
+	{
+		ScriptWrapper wrapper = new ScriptWrapper();
+
+		wrapper.addLine("NewMap as session");
+		wrapper.addLine("Set name=$session.name");
+
+		// parse
+		HulaExecutable parserResult = parseAndAssert(wrapper.toString());
+
+		// run
+		HulaContext hctx = new HulaContext();
+		evaluateBeanShell(parserResult, hctx);
+		
+		Assert.assertEquals("invalid result", null, hctx.getParameter("name"));
+
+	}
+	
+	@Test
+	public void testNullConditional() throws Exception
+	{
+		ScriptWrapper wrapper = new ScriptWrapper();
+
+		wrapper.addLine("If $name=null");
+		wrapper.addLine("	Set result=\"true\"");
+		wrapper.addLine("Else");
+		wrapper.addLine("	Set result=\"false\"");
+		wrapper.addLine("End");
+
+		// parse
+		HulaExecutable parserResult = parseAndAssert(wrapper.toString());
+
+		// run
+		HulaContext hctx = new HulaContext();
+		evaluateBeanShell(parserResult, hctx);
+		
+		Assert.assertEquals("invalid result", "true", hctx.getParameter("result"));
+
+	}
 }

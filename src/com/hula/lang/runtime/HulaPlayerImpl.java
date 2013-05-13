@@ -117,6 +117,10 @@ public class HulaPlayerImpl implements HulaPlayer
 				{
 					continue;
 				}
+				if (value == bsh.Primitive.VOID)
+				{
+					value = null;
+				}
 				// logger.info("mapping [{}] [{}]", key, value);
 
 				// add the variables to the HulaContext

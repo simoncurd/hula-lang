@@ -36,6 +36,9 @@ public class VariableReferenceParsingTests extends BaseTermTestCase
 
 		assertValid("$n.a.b");
 		assertValid("$n_.a_.b_");
+		
+		
+		assertValid("$list");
 
 		// need at least one trailing char
 		assertFails("$name.");

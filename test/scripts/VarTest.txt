@@ -1,0 +1,12 @@
+
+Set title ="62671-social-media-lessons-from-coca-cola-starbucks-and-delta"
+
+Tokenise $title, delimiter="-" as titleParts
+
+Set pageId=$titleParts.[0]
+
+Echo "pageId is $pageId"
+
+
+Tokenise "Jim,Jeff,Jack" as names
+Echo $names.[1]

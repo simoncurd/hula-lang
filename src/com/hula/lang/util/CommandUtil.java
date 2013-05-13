@@ -58,7 +58,7 @@ public class CommandUtil
 	 * @param connector The current runtime connector
 	 * @return A string with any references replaced
 	 */
-	public static String replaceReferences(String string, RuntimeConnector connector)
+	public static Object replaceReferences(String string, RuntimeConnector connector)
 	{
 		if (string != null && string.indexOf('$') != -1)
 		{
@@ -71,7 +71,10 @@ public class CommandUtil
 				String reference = string.substring(m.start(), m.end());
 
 				Object value = getReferencedVariableValue(reference, connector);
-
+				if (m.start() == 0 && m.end() == string.length())
+				{
+					return value;
+				}
 				if (value != null)
 				{
 					// fix dollars
